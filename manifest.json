@@ -7,7 +7,7 @@
       "strict_min_version": "60.0"
     }
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "semanticdata",
   "icons": {
     "48": "icon48.png"
@@ -17,7 +17,7 @@
     "storage"
   ],
   "chrome_url_overrides": {
-    "newtab": "newtab.html"
+    "newtab": "new-tab.html"
   },
   "browser_action": {
     "browser_style": true,
