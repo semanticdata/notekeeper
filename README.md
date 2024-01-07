@@ -1,4 +1,4 @@
-<h1 align=center><img src="icons48.png" alt="logo" /> New Tab Notes</h1>
+<h1 align=center><img src="./icons48.png" alt="logo" /> New Tab Notes</h1>
 
 <!-- <p align=center>
 <img alt="Mozilla Add-on" src="https://img.shields.io/amo/v/%7B3eacef21-a96d-4adb-942e-c4eb162bf00c%7D">
