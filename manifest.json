@@ -1,29 +1,29 @@
 {
   "manifest_version": 2,
-  "name": "Tab Notes",
+  "name": "New Tab Notes",
   "browser_specific_settings": {
     "gecko": {
-      "id": "tab-notes@ryux",
+      "id": "new-tab-notes@semanticdata",
       "strict_min_version": "60.0"
     }
   },
-  "version": "0.1.2",
-  "author": "Nishit",
+  "version": "0.1.0",
+  "author": "semanticdata",
   "icons": {
     "48": "icon48.png"
   },
-  "description": "Allows you to take notes in the new tab page",
-  "permissions": ["storage"],
+  "description": "Transforms the New Tab into an auto-savinng text editor.",
+  "permissions": [
+    "storage"
+  ],
   "chrome_url_overrides": {
     "newtab": "newtab.html"
   },
-
   "browser_action": {
     "browser_style": true,
-    "default_title": "Tab notes",
-    "default_popup": "newtab.html"
+    "default_title": "New Tab Notes",
+    "default_popup": "new-tab.html"
   },
-
   "commands": {
     "_execute_browser_action": {
       "suggested_key": {
