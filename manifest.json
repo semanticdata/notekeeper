@@ -3,7 +3,7 @@
   "name": "New Tab Notes",
   "browser_specific_settings": {
     "gecko": {
-      "id": "new-tab-notes@semanticdata",
+      "id": "newtab-notes@semanticdata",
       "strict_min_version": "60.0"
     }
   },
