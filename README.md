@@ -10,6 +10,10 @@
 
 A Firefox extension for simple notetaking in Firefox's New Tab.
 
+## Screenshot
+
+![screenshot](screenshot-1.png)
+
 ## Acknowledgments
 
 Icons used for all my extensions are part of <a href="https://uxwing.com/">UXWing</a>'s collection. Take a look at their <a href="https://uxwing.com/license">license</a>.
