@@ -8,7 +8,7 @@
 <!-- <img src="https://img.shields.io/github/license/semanticdata/firefox-new-tab-notes" /> -->
 </p>
 
-A Firefox extension for simple notetaking in Firefox's New Tab.
+Firefox extension that transforms the New Tab into a minimalist, auto-saving text editor.
 
 ## Screenshot
 
