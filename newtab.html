@@ -7,37 +7,48 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>New Tab</title>
   <link rel="icon" type="image/png" sizes="48x48" href="icon48.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <script type="text/javascript" src="./tabnotes.js"></script>
   <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700&display=swap" /> -->
 </head>
 
 <style>
-  body {
-    margin: 0;
-    padding: 1rem;
+  html {
     background: rebeccapurple;
   }
 
-  #notes {
+  body {
+    padding: 0 1rem;
     box-sizing: border-box;
-    border: 0;
-    font-size: 18px;
+  }
+
+  .container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+  /* #notes {} */
+
+  .textarea {
+    border-radius: 10px;
     line-height: 1.75rem;
-    margin: 0;
-    min-height: 100vh;
-    height: auto;
-    padding: 2rem 15%;
-    resize: none;
-    width: 100%;
+    border: 0;
     background: #202020;
+    color: #fff;
+    height: 100%;
+  }
+
+  .textarea::placeholder {
     color: #ffffff;
-    border-radius: 8px;
   }
 </style>
 
 <body>
-  <main>
-    <textarea id="notes" placeholder="Start writing."></textarea>
+  <main class="">
+    <div class="container">
+      <textarea class="textarea is-medium" id="notes" placeholder="Start writing..."></textarea>
+    </div>
   </main>
 </body>
 

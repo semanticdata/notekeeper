@@ -14,6 +14,10 @@ A Firefox extension for simple notetaking in Firefox's New Tab.
 
 ![screenshot](screenshot-1.png)
 
+## TODO
+
+- [ ] Integrate a new [options](https://github.com/semanticdata/firefox-chatgpt-in-sidebar/blob/main/options/options.js) menu, or toggle. Could be used to store bg-color, txt-color, etc. This in theory allows the user to customize the editor.
+
 ## Acknowledgments
 
 This extension is based on [Tab Notes](https://github.com/nsht/tab_notes) which hasn't received an update in 4 years.

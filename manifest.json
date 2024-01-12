@@ -4,15 +4,15 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "newtab-notes@semanticdata",
-      "strict_min_version": "60.0"
+      "strict_min_version": "100.0"
     }
   },
-  "version": "0.1.3",
+  "version": "0.2.0",
   "author": "semanticdata",
   "icons": {
     "48": "icon48.png"
   },
-  "description": "Transforms the New Tab into an auto-savinng text editor.",
+  "description": "Transforms the New Tab into a minimalist, auto-saving text editor.",
   "permissions": [
     "storage"
   ],
