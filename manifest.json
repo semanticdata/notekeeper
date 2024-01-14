@@ -7,12 +7,12 @@
       "strict_min_version": "100.0"
     }
   },
-  "version": "0.3.5",
+  "version": "0.5.0",
   "author": "semanticdata",
   "icons": {
     "48": "src/icon48.png"
   },
-  "description": "Transforms the New Tab into a minimalist, auto-saving text editor.",
+  "description": "Transform your New Tab into a minimalist, auto-saving text editor.",
   "permissions": [
     "storage"
   ],

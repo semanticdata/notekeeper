@@ -2,12 +2,14 @@
   --bkg-color: #fff;
   --text-color: #222;
   --alt-color: #fafafa;
+  --accent-color: #9000ff;
 }
 
 [data-theme="dark"] {
   --bkg-color: #202020;
   --text-color: #fff;
-  --alt-color: #1a191b
+  --alt-color: #1a191b;
+  --accent-color: #e0b0ff;
 }
 
 body {
@@ -22,7 +24,12 @@ main {
   padding-top: 1rem;
 }
 
+a {
+  color: var(--accent-color);
+}
+
 a:hover {
+  color: var(--text-color);
   text-decoration: underline;
   filter: brightness(80%);
 }
@@ -37,11 +44,10 @@ a:hover {
   font-family: "Fira Mono", monospace;
   border-radius: 10px;
   line-height: 1.75rem;
-  height: 100vh;
-  padding: 1rem;
-  /* border: 0; */
+  height: calc(100vh - 1rem);
   background: var(--alt-color);
   color: var(--text-color);
+  padding: 1rem 2rem;
 }
 
 .textarea::placeholder {
@@ -59,19 +65,17 @@ a:hover {
 
 .footer {
   background: inherit;
-  padding-top: 1rem;
   filter: opacity(0.75);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: right;
 }
 
-.button {
-  background: var(--alt-color);
-  color: var(--text-color);
-}
-
-.button:active,
-.button:focus,
-.button:hover {
-  color: var(--text-color);
+.toggle {
+  background: var(--bkg-color);
+  border: 0;
+  cursor: pointer;
+  font-size: 24px;
 }
 
 .heart:hover {
