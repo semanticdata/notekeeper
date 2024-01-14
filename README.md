@@ -12,7 +12,7 @@ Firefox extension that transforms the New Tab into a minimalist, auto-saving tex
 
 ## Screenshot
 
-![screenshot](screenshot-1.png)
+![screenshot](screenshot.png)
 
 ## TODO
 
