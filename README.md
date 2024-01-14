@@ -1,4 +1,4 @@
-<h1 align=center><img src="icon48.png" alt="logo" /> New Tab Notes</h1>
+<h1 align=center><img src="src/icon48.png" alt="logo" /> New Tab Notes</h1>
 
 <p align=center>
 <img alt="Mozilla Add-on" src="https://img.shields.io/amo/v/newtab-notes@semanticdata">
@@ -16,6 +16,7 @@ Firefox extension that transforms the New Tab into a minimalist, auto-saving tex
 
 ## TODO
 
+- [x] Add a light and a dark theme. Add toggle to switch between the two.
 - [ ] Integrate a new [options](https://github.com/semanticdata/firefox-chatgpt-in-sidebar/blob/main/options/options.js) menu, or toggle. Could be used to store bg-color, txt-color, etc. This in theory allows the user to customize the editor.
 
 ## Acknowledgments

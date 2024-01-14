@@ -50,9 +50,31 @@ a:hover {
 }
 
 .navbar {
-  background: var(--bkg-color);
+  background: inherit;
 }
 
 .title {
+  color: inherit;
+}
+
+.footer {
+  background: inherit;
+  padding-top: 1rem;
+  filter: opacity(0.75);
+}
+
+.button {
+  background: var(--alt-color);
   color: var(--text-color);
+}
+
+.button:active,
+.button:focus,
+.button:hover {
+  color: var(--text-color);
+}
+
+.heart:hover {
+  text-decoration: none;
+  color: red;
 }

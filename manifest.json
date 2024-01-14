@@ -7,22 +7,22 @@
       "strict_min_version": "100.0"
     }
   },
-  "version": "0.3.0",
+  "version": "0.3.5",
   "author": "semanticdata",
   "icons": {
-    "48": "icon48.png"
+    "48": "src/icon48.png"
   },
   "description": "Transforms the New Tab into a minimalist, auto-saving text editor.",
   "permissions": [
     "storage"
   ],
   "chrome_url_overrides": {
-    "newtab": "newtab.html"
+    "newtab": "src/newtab.html"
   },
   "browser_action": {
     "browser_style": true,
     "default_title": "New Tab Notes",
-    "default_popup": "newtab.html"
+    "default_popup": "src/newtab.html"
   },
   "commands": {
     "_execute_browser_action": {

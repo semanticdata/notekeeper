@@ -14,7 +14,7 @@ browser_obj.windows.onFocusChanged.addListener(tabOpen);
 
 function logKey(e) {
   clearTimeout(timeoutId);
-  timeoutId = setTimeout(function() {
+  timeoutId = setTimeout(function () {
     saveToDB();
   }, 10);
 }
@@ -36,7 +36,7 @@ function saveToDB() {
     tab_note: document.querySelector("#notes").value
   };
   if (browser_type === "Chrome") {
-    chrome.storage.sync.set(data, function() {});
+    chrome.storage.sync.set(data, function () { });
   } else {
     browser_obj.storage.sync.set(data);
   }
@@ -44,7 +44,7 @@ function saveToDB() {
 
 function tabOpen(tab) {
   if (browser_type === "Chrome") {
-    chrome.storage.sync.get(["tab_note"], function(result) {
+    chrome.storage.sync.get(["tab_note"], function (result) {
       if (typeof result.tab_note !== "undefined") {
         document.querySelector("#notes").value = result.tab_note;
       }
