@@ -6,9 +6,19 @@
 <img src="https://img.shields.io/amo/dw/newtab-notes@semanticdata" />
 <img src="https://img.shields.io/amo/users/newtab-notes@semanticdata" />
 <!-- <img src="https://img.shields.io/github/license/semanticdata/firefox-new-tab-notes" /> -->
-<br>
-Firefox extension that transforms the New Tab into a minimalist, auto-saving text editor.
 </p>
+
+## Overview
+
+Firefox extension that transforms the New Tab into a minimalist, auto-saving text editor.
+
+## Features
+
+- Integrates Firefox Sync. Access your notes across browser instances.
+- Dark/Light themes and toggle.
+- Autosaves your content after every keystroke.
+- Uses [Bulma](https://bulma.io/) for styling.
+- Uses [Fira Code](https://github.com/tonsky/FiraCode) as default font.
 
 ## Screenshots
 

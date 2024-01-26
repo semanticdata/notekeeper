@@ -33,10 +33,10 @@ function getBrowser() {
 
 function saveToDB() {
   data = {
-    tab_note: document.querySelector("#notes").value
+    tab_note: document.querySelector("#notes").value,
   };
   if (browser_type === "Chrome") {
-    chrome.storage.sync.set(data, function () { });
+    chrome.storage.sync.set(data, function () {});
   } else {
     browser_obj.storage.sync.set(data);
   }
@@ -50,7 +50,7 @@ function tabOpen(tab) {
       }
     });
   } else {
-    browser_obj.storage.sync.get(["tab_note"]).then(result => {
+    browser_obj.storage.sync.get(["tab_note"]).then((result) => {
       if (typeof result.tab_note !== "undefined") {
         document.querySelector("#notes").value = result.tab_note;
       }

@@ -1,8 +1,11 @@
 /* * Function to calculate current theme setting.
-   * Look for a local storage value.
-   * Fall back to system setting.
-   * Fall back to light mode. */
-function calculateSettingAsThemeString({ localStorageTheme, systemSettingDark }) {
+ * Look for a local storage value.
+ * Fall back to system setting.
+ * Fall back to light mode. */
+function calculateSettingAsThemeString({
+  localStorageTheme,
+  systemSettingDark,
+}) {
   if (localStorageTheme !== null) {
     return localStorageTheme;
   }
@@ -36,7 +39,10 @@ const localStorageTheme = localStorage.getItem("theme");
 const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
 
 /* 2. Work out the current site settings */
-let currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
+let currentThemeSetting = calculateSettingAsThemeString({
+  localStorageTheme,
+  systemSettingDark,
+});
 
 /* 3. Update the theme setting and button text accoridng to current settings */
 updateButton({ buttonEl: button, isDark: currentThemeSetting === "dark" });
