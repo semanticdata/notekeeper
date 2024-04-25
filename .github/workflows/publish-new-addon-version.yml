@@ -20,12 +20,8 @@ jobs:
       - name: Publish
         uses: yayuyokitano/firefox-addon@v0.0.6-alpha
         with:
-          api_key: ${{ secrets.FIREFOX_JWT_ISSUER }}
+          api_key: ${{ secrets.FIREFOX_JWT_ISSUER }} #
           api_secret: ${{ secrets.FIREFOX_JWT_SECRET }}
-          # guid: "newtab-notes@semanticdata"
           guid: ${{ secrets.FIREFOX_EXTENSION_ID }}
-          xpi_path: archive.zip # Must match archive output path
-
-# Change the version number in the manifest.json
-# Set up repository secrets:
-# `FIREFOX_EXTENSION_ID`, `FIREFOX_JWT_ISSUER` and `FIREFOX_JWT_SECRET`
+          xpi_path: archive.zip
+          # src_path: firefox-brave-search-src.zip # Optional
