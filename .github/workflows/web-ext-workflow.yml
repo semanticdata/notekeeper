@@ -2,11 +2,11 @@ name: "Release"
 
 on:
   workflow_dispatch:
-  # push:
-  #   tags:
-  #     - "v*.*.*"
-  release:
-    types: [published]
+  push:
+    tags:
+      - "v*.*.*"
+  # release:
+  #   types: [published]
 
 jobs:
   build:
