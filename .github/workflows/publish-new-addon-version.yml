@@ -1,0 +1,31 @@
+name: Publish new Firefox Add-on version
+
+on:
+  workflow_dispatch: # Trigger workflow manually
+  release:
+    types: [published] # Trigger when a new release is published
+
+jobs:
+  prepare-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Fetch all history for git info
+
+      - name: Archive
+        run: git archive --format=zip --output=archive.zip HEAD
+
+      - name: Publish
+        uses: yayuyokitano/firefox-addon@v0.0.6-alpha
+        with:
+          api_key: ${{ secrets.FIREFOX_JWT_ISSUER }}
+          api_secret: ${{ secrets.FIREFOX_JWT_SECRET }}
+          guid: "newtab-notes@semanticdata"
+          # guid: ${{ secrets.FIREFOX_EXTENSION_ID }}
+          xpi_path: archive.zip # Must match archive output path
+
+# Change the version number in the manifest.json
+# Set up repository secrets:
+# `FIREFOX_EXTENSION_ID`, `FIREFOX_JWT_ISSUER` and `FIREFOX_JWT_SECRET`
