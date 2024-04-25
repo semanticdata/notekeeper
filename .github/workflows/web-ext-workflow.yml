@@ -24,15 +24,15 @@ jobs:
         with:
           cmd: build
           filename: "{name}-{version}.xpi"
-          # ignoreFiles: '[ "package.json","package-lock.json","yarn.lock", ".github", ".gitattributes", "LICENSE", "README.md" ]'
-          ignoreFiles: |
-            - package.json
-            - package-lock.json
-            - yarn.lock
-            - .github
-            - .gitattributes
-            - LICENSE
-            - README.md
+          ignoreFiles: '[ "package.json","package-lock.json","yarn.lock", ".github", ".gitattributes", "LICENSE", "README.md" ]'
+          # ignoreFiles: |
+          #   - package.json
+          #   - package-lock.json
+          #   - yarn.lock
+          #   - .github
+          #   - .gitattributes
+          #   - LICENSE
+          #   - README.md
 
       - name: "web-ext sign"
         id: web-ext-sign
