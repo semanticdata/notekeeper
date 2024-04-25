@@ -22,8 +22,8 @@ jobs:
         with:
           api_key: ${{ secrets.FIREFOX_JWT_ISSUER }}
           api_secret: ${{ secrets.FIREFOX_JWT_SECRET }}
-          guid: "newtab-notes@semanticdata"
-          # guid: ${{ secrets.FIREFOX_EXTENSION_ID }}
+          # guid: "newtab-notes@semanticdata"
+          guid: ${{ secrets.FIREFOX_EXTENSION_ID }}
           xpi_path: archive.zip # Must match archive output path
 
 # Change the version number in the manifest.json
