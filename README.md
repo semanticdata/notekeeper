@@ -6,8 +6,6 @@
 ![Add-on users](https://img.shields.io/amo/users/newtab-notes@semanticdata)
 ![License](https://img.shields.io/github/license/semanticdata/firefox-new-tab-notes)
 
-## Overview
-
 Firefox extension that transforms the New Tab into a minimalist, auto-saving text editor.
 
 ## Features
