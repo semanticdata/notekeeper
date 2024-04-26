@@ -1,7 +1,6 @@
-name: "Release"
+name: Release new version
 
 on:
-  workflow_dispatch:
   push:
     tags:
       - "v*.*.*"
@@ -9,8 +8,7 @@ on:
   #   types: [published]
 
 jobs:
-  build:
-    name: Build
+  build-release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -18,15 +16,22 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: web-ext build
+      - name: Build
         id: web-ext-build
         uses: kewisch/action-web-ext@v1
         with:
           cmd: build
           filename: "{name}-{version}.xpi"
-          ignoreFiles: '[ "package.json","package-lock.json","yarn.lock", ".github", ".gitattributes", "LICENSE", "README.md" ]'
+          ignoreFiles: '[
+            "package.json",
+            "package-lock.json",
+            "yarn.lock",
+            ".github",
+            ".gitattributes",
+            "LICENSE",
+            "README.md"]'
 
-      - name: "web-ext sign"
+      - name: Sign
         id: web-ext-sign
         uses: kewisch/action-web-ext@v1
         with:
@@ -37,13 +42,7 @@ jobs:
           apiSecret: ${{ secrets.FIREFOX_JWT_SECRET }}
           timeout: 900000
 
-      # - name: "Upload Artifact"
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     name: target.xpi
-      #     path: ${{ steps.web-ext-build.outputs.target }}
-
-      - name: "Create Release"
+      - name: Release
         uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
