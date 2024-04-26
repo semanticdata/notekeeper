@@ -8,6 +8,8 @@
 
 Firefox extension that transforms the New Tab into a minimalist, auto-saving text editor.
 
+[![Get the Addon](https://raw.githubusercontent.com/semanticdata/text-revealer-firefox-extension/master/firefox.png)](https://addons.mozilla.org/en-US/firefox/addon/new-tab-note/)
+
 ## Features
 
 - Integrates Firefox Sync. Access your notes across browser instances.
