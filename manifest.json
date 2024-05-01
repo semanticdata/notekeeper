@@ -19,8 +19,33 @@
     "newtab": "src/newtab.html"
   },
   "browser_action": {
-    "browser_style": true,
     "default_title": "New Tab Notes",
-    "default_popup": "src/newtab.html"
+    "default_icon": {
+      "48": "src/icon48.png",
+      "512": "src/icon512.png"
+    }
+  },
+  "background": {
+    "scripts": ["src/background.js"]
+  },
+  "options_ui": {
+    "page": "src/options/options.html",
+    "browser_style": true
+  },
+  "sidebar_action": {
+    "default_icon": {
+      "48": "src/icon48.png",
+      "512": "src/icon512.png"
+    },
+    "default_title": "Sidebar Notes",
+    "default_panel": "src/sidebar/panel.html"
+  },
+  "commands": {
+    "_execute_sidebar_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+N"
+      },
+      "description": "Toggle the Sidebar Notes."
+    }
   }
 }

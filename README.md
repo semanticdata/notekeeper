@@ -1,10 +1,6 @@
 # 📝 New Tab Notes
 
-![Mozilla Add-on](https://img.shields.io/amo/v/newtab-notes@semanticdata)
-![Add-on rating](https://img.shields.io/amo/rating/newtab-notes@semanticdata)
-![Add-on downloads](https://img.shields.io/amo/dw/newtab-notes@semanticdata)
-![Add-on users](https://img.shields.io/amo/users/newtab-notes@semanticdata)
-![License](https://img.shields.io/github/license/semanticdata/firefox-new-tab-notes)
+![Mozilla Add-on](https://img.shields.io/amo/v/newtab-notes@semanticdata) ![Add-on rating](https://img.shields.io/amo/rating/newtab-notes@semanticdata) ![Add-on downloads](https://img.shields.io/amo/dw/newtab-notes@semanticdata) ![Add-on users](https://img.shields.io/amo/users/newtab-notes@semanticdata) ![License](https://img.shields.io/github/license/semanticdata/firefox-new-tab-notes)
 
 Firefox extension that transforms the New Tab into a minimalist, auto-saving text editor.
 
@@ -20,11 +16,9 @@ Firefox extension that transforms the New Tab into a minimalist, auto-saving tex
 
 ## 🖼 Screenshots
 
-![screenshot light theme](screenshot.png)
-*Light mode*
+![screenshot light theme](screenshot.png) _Light mode_
 
-![screenshot dark theme](screenshot-dark.png)
-*Dark mode*
+![screenshot dark theme](screenshot-dark.png) _Dark mode_
 
 ## TODO
 

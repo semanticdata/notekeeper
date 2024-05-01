@@ -1,43 +1,51 @@
-[data-theme="light"] {
-  --bkg-color: #fff;
-  --text-color: #222;
-  --alt-color: #fafafa;
-  --accent-color: #9000ff;
+/* Dark and Light Themes*/
+[data-theme='light'] {
+  --bg-color: #fff; /* Background */
+  --text-color: #222; /* Text */
+  --alt-color: #fafafa; /* Alt Text */
+  --accent-color: #9000ff; /* Accent Color */
+}
+[data-theme='dark'] {
+  --bg-color: #202020; /* Background */
+  --text-color: #fff; /* Text */
+  --alt-color: #1a191b; /* Alt Text */
+  --accent-color: #e0b0ff; /* Accent Color */
 }
 
-[data-theme="dark"] {
-  --bkg-color: #202020;
-  --text-color: #fff;
-  --alt-color: #1a191b;
-  --accent-color: #e0b0ff;
-}
-
-html {
-  background: inherit;
-}
-
-body {
-  background: var(--bkg-color);
-  color: var(--text-color);
+/* Core Styles */
+* {
   box-sizing: border-box;
-  min-height: 100vh;
-  padding: 1rem;
-  max-width: 750px;
-  margin: 0 auto;
 }
-
+html {
+  background: var(--bg-color);
+}
+body {
+  color: var(--text-color);
+  max-width: 80ch;
+  padding-inline: 1rem;
+  margin-inline: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  min-height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 main {
-  padding: 1rem;
-  height: 80vh;
+  flex: 1;
+}
+footer {
+  min-height: 4rem;
+  filter: opacity(0.85);
+  padding-block: 0.5rem;
+  text-align: right;
+  font-size: 12px;
 }
 
-button {
-  background: inherit;
-  border: none;
-  cursor: pointer;
-  font-size: 24px;
-}
-
+/* Links */
 a {
   color: var(--accent-color);
 }
@@ -47,40 +55,41 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Textareas */
 .textarea {
-  font-family: "Fira Mono", monospace;
+  font-family: 'Fira Mono', monospace;
   background: var(--alt-color);
   color: var(--text-color);
   min-height: 100%;
   padding: 1rem;
 }
-
 .textarea::placeholder {
   color: var(--text-color);
 }
 
-.navbar {
-  background: inherit;
-  display: flex;
-  justify-content: space-between;
+/* Footer */
+.heart:hover {
+  text-decoration: none;
+  color: red;
 }
 
+/* Theme Toggle */
+button {
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Site Title */
 .nav-title {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.75;
 }
 
-.footer {
-  background: inherit;
-  filter: opacity(0.75);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  text-align: right;
-  font-size: 12px;
-}
-
-.heart:hover {
-  text-decoration: none;
-  color: red;
+@media screen and (max-width: 80ch) {
+  body {
+    min-width: 95vw;
+  }
 }

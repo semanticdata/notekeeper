@@ -3,7 +3,7 @@ name: Release new version
 on:
   push:
     tags:
-      - "v*.*.*"
+      - 'v*.*.*'
   # release:
   #   types: [published]
 
@@ -21,15 +21,8 @@ jobs:
         uses: kewisch/action-web-ext@v1
         with:
           cmd: build
-          filename: "{name}-{version}.xpi"
-          ignoreFiles: '[
-            "package.json",
-            "package-lock.json",
-            "yarn.lock",
-            ".github",
-            ".gitattributes",
-            "LICENSE",
-            "README.md"]'
+          filename: '{name}-{version}.xpi'
+          ignoreFiles: '[ "package.json", "package-lock.json", "yarn.lock", ".github", ".gitattributes", "LICENSE", "README.md"]'
 
       - name: Sign
         id: web-ext-sign
