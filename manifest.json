@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "New Tab Notes",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Transform your New Tab into a minimalist, auto-saving text editor.",
   "browser_specific_settings": {
     "gecko": {
