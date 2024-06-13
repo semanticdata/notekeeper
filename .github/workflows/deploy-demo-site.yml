@@ -1,4 +1,4 @@
-name: Deploy static site to GitHub Pages
+name: Deploy demo site to GitHub Pages
 
 on:
   workflow_dispatch:
