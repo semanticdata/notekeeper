@@ -1,0 +1,95 @@
+/* Dark and Light Themes*/
+[data-theme='light'] {
+  --bg-color: #fff; /* Background */
+  --text-color: #222; /* Text */
+  --alt-color: #fafafa; /* Alt Text */
+  --accent-color: #9000ff; /* Accent Color */
+}
+[data-theme='dark'] {
+  --bg-color: #202020; /* Background */
+  --text-color: #fff; /* Text */
+  --alt-color: #1a191b; /* Alt Text */
+  --accent-color: #e0b0ff; /* Accent Color */
+}
+
+/* Core Styles */
+* {
+  box-sizing: border-box;
+}
+html {
+  background: var(--bg-color);
+}
+body {
+  color: var(--text-color);
+  max-width: 80ch;
+  padding-inline: 1rem;
+  margin-inline: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  min-height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main {
+  flex: 1;
+}
+footer {
+  min-height: 4rem;
+  filter: opacity(0.85);
+  padding-block: 0.5rem;
+  text-align: right;
+  font-size: 12px;
+}
+
+/* Links */
+a {
+  color: var(--accent-color);
+}
+
+a:hover {
+  color: var(--text-color);
+  text-decoration: underline;
+}
+
+/* Textareas */
+.textarea {
+  font-family: 'Fira Mono', monospace;
+  background: var(--alt-color);
+  color: var(--text-color);
+  min-height: 100%;
+  padding: 1rem;
+}
+.textarea::placeholder {
+  color: var(--text-color);
+}
+
+/* Footer */
+.heart:hover {
+  text-decoration: none;
+  color: red;
+}
+
+/* Theme Toggle */
+button {
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Site Title */
+.nav-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.75;
+}
+
+@media screen and (max-width: 80ch) {
+  body {
+    min-width: 95vw;
+  }
+}
