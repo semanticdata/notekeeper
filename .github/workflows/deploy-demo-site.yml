@@ -22,12 +22,30 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Remove old demo
+        run: test -d demo && rm -rf demo/* || mkdir demo
+        # run: rm -rf demo/*
+
+      - name: Copy src to demo
+        run: |
+          cp src/newtab.html demo/index.html
+          cp src/styles.css demo/styles.css
+          test -d demo/icons && cp src/icons/* demo/icons/ || mkdir demo/icons
+          test -d demo/js && cp src/js/* demo/js || mkdir demo/js
+          # cp src/newtab.html demo/index.html
+          # cp src/styles.css demo/styles.css
+          # cp src/icons/* demo/icons/*
+          # cp src/js/* demo/js
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: "demo"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
