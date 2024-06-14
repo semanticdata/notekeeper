@@ -29,14 +29,10 @@ jobs:
 
       - name: Copy src to demo
         run: |
-          cp src/newtab.html demo/index.html
-          cp src/styles.css demo/styles.css
-          test -d demo/icons && cp src/icons/* demo/icons/ || mkdir demo/icons
-          test -d demo/js && cp src/js/* demo/js || mkdir demo/js
-          # cp src/newtab.html demo/index.html
-          # cp src/styles.css demo/styles.css
-          # cp src/icons/* demo/icons/*
-          # cp src/js/* demo/js
+          cp -rf src/newtab.html demo/index.html
+          cp -rf src/styles.css demo/styles.css
+          test -d demo/icons && cp -r src/icons/* demo/icons || (mkdir demo/icons && cp -r src/icons/* demo/icons)
+          test -d demo/js && cp -r src/js/* demo/js || (mkdir demo/js && cp -r src/js/* demo/js)
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
