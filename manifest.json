@@ -11,22 +11,24 @@
   },
   "author": "semanticdata",
   "icons": {
-    "48": "src/icon48.png",
-    "512": "src/icon512.png"
+    "64": "src/icon64.png"
   },
-  "permissions": ["storage"],
+  "permissions": [
+    "storage"
+  ],
   "chrome_url_overrides": {
     "newtab": "src/newtab.html"
   },
   "browser_action": {
     "default_title": "New Tab Notes",
     "default_icon": {
-      "48": "src/icon48.png",
-      "512": "src/icon512.png"
+      "64": "src/icon64.png"
     }
   },
   "background": {
-    "scripts": ["src/background.js"]
+    "scripts": [
+      "src/background.js"
+    ]
   },
   "options_ui": {
     "page": "src/options/options.html",
@@ -34,8 +36,7 @@
   },
   "sidebar_action": {
     "default_icon": {
-      "48": "src/icon48.png",
-      "512": "src/icon512.png"
+      "64": "src/icon64.png"
     },
     "default_title": "Sidebar Notes",
     "default_panel": "src/sidebar/panel.html"
