@@ -4,10 +4,10 @@
 
 Notekeeper is a Firefox extension that transforms the New Tab into a minimalist, auto-saving text editor. It now comes with a new sidebar companion!
 
-Check out the [demo](https://semanticdata.github.io/notekeeper/).  
-Get the [extension](https://addons.mozilla.org/en-US/firefox/addon/new-tab-note/).
+If you are curious, go check out the [demo](https://semanticdata.github.io/notekeeper/).
 
-<!--[![Get the Addon](https://raw.githubusercontent.com/semanticdata/text-revealer-firefox-extension/master/firefox.png)](https://addons.mozilla.org/en-US/firefox/addon/new-tab-note/)-->
+<a href="https://addons.mozilla.org/en-US/firefox/addon/new-tab-note/">
+<img src="https://raw.githubusercontent.com/semanticdata/text-revealer-firefox-extension/master/firefox.png" alt="firefox addon" /></a>
 
 ## ✨ Features
 
@@ -23,14 +23,15 @@ Get the [extension](https://addons.mozilla.org/en-US/firefox/addon/new-tab-note/
 
 ![screenshot dark theme](screenshot-dark.png) _Dark mode_
 
-## TODO
+## 🔄 Changes from Upstream
 
-- [x] Add [Bulma](https://bulma.io/) for basic styling.
-- [x] Integrate w/ Firefox Sync. Notes content is preserved between machines.
-- [x] Add [Fira Code](https://fonts.google.com/specimen/Fira+Code) as font-family for the editor.
-- [x] Add light and dark themes incl. toggle.
-- [ ] Integrate a new [options](https://github.com/semanticdata/firefox-chatgpt-in-sidebar/blob/main/options/options.js) menu, or toggle.
-  - Could be used to store bg-color, txt-color, etc. This in theory allows the user to customize the editor.
+| Change description |       |
+| ------------------ | :---: |
+| Add basic styles with [Bulma](https://bulma.io/). | ✔ |
+| Integrate w/ Firefox Sync, preserving notes content between machines. | ✔ |
+| Add [Fira Code](https://fonts.google.com/specimen/Fira+Code) as font-family for the editor. | ✔ |
+| Add light and dark themes and toggle.  | ✔ |
+| Add new [options](https://github.com/semanticdata/firefox-chatgpt-in-sidebar/blob/main/options/options.js) menu to allow for customization beyond theme color. | ⏳ |
 
 ## 💜 Acknowledgments
 
