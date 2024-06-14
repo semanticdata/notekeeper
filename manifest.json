@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "New Tab Notes",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Transform your New Tab into a minimalist, auto-saving text editor.",
   "browser_specific_settings": {
     "gecko": {
@@ -11,24 +11,20 @@
   },
   "author": "semanticdata",
   "icons": {
-    "64": "src/icon64.png"
+    "64": "src/icons/icon64.png"
   },
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage"],
   "chrome_url_overrides": {
     "newtab": "src/newtab.html"
   },
   "browser_action": {
     "default_title": "New Tab Notes",
     "default_icon": {
-      "64": "src/icon64.png"
+      "64": "src/icons/icon64.png"
     }
   },
   "background": {
-    "scripts": [
-      "src/background.js"
-    ]
+    "scripts": ["src/background.js"]
   },
   "options_ui": {
     "page": "src/options/options.html",
@@ -36,7 +32,7 @@
   },
   "sidebar_action": {
     "default_icon": {
-      "64": "src/icon64.png"
+      "64": "src/icons/icon64.png"
     },
     "default_title": "Sidebar Notes",
     "default_panel": "src/sidebar/panel.html"
