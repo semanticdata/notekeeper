@@ -1,24 +1,30 @@
 [data-theme='light'] {
   --bg-color: #fff;
+  --textarea-bg-color: #fafafa;
   --text-color: #222;
   --alt-color: #fafafa;
   --accent-color: #9000ff;
 }
 [data-theme='dark'] {
   --bg-color: #202020;
+  --textarea-bg-color: #202020;
   --text-color: #fff;
   --alt-color: #1a191b;
   --accent-color: #e0b0ff;
+}
+textarea,
+[data-theme='light'],
+[data-theme='dark'] {
+  transition: all 0.4s ease-in-out;
 }
 * {
   box-sizing: border-box;
 }
 html {
   background: var(--bg-color);
+  color: var(--text-color);
 }
 body {
-  background: var(--bg-color);
-  color: var(--text-color);
   max-width: 80ch;
   padding-inline: 1rem;
   margin-inline: auto;
@@ -37,23 +43,17 @@ header {
   flex-grow: 1;
 } */
 footer {
-  padding-block: 1rem;
-  text-align: right;
-  font-size: 12px;
+  padding-block-end: 1rem;
+  font-size: 14px;
 }
 textarea {
   background: var(--alt-color);
-  /*   background: var(--bg-color); */
   color: var(--text-color);
   min-height: 100%;
   padding: 1rem;
   width: 100%;
   border-radius: 0.35rem;
-  background: #fafafa;
   font-size: 1.1rem;
-}
-textarea::placeholder {
-  color: black;
 }
 .heart {
   text-decoration: none;
@@ -68,4 +68,8 @@ button {
   cursor: pointer;
   font-size: 24px;
 }
-/* @media screen and (max-width: 80ch) {} */
+@media screen and (max-width: 80ch) {
+  main {
+    flex-grow: 1;
+  }
+}
