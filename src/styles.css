@@ -1,100 +1,75 @@
-/* Dark and Light Themes*/
 [data-theme='light'] {
   --bg-color: #fff;
+  --textarea-bg-color: #fafafa;
   --text-color: #222;
   --alt-color: #fafafa;
   --accent-color: #9000ff;
 }
 [data-theme='dark'] {
   --bg-color: #202020;
+  --textarea-bg-color: #202020;
   --text-color: #fff;
   --alt-color: #1a191b;
   --accent-color: #e0b0ff;
 }
-
-/* Core Styles */
+textarea,
+[data-theme='light'],
+[data-theme='dark'] {
+  transition: all 0.4s ease-in-out;
+}
 * {
   box-sizing: border-box;
 }
 html {
   background: var(--bg-color);
+  color: var(--text-color);
 }
 body {
-  color: var(--text-color);
   max-width: 80ch;
   padding-inline: 1rem;
   margin-inline: auto;
+  margin-block: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: sans-serif;
 }
 header {
-  min-height: 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-main {
+/* main {
   flex-grow: 1;
-}
+} */
 footer {
-  min-height: 3rem;
-  filter: opacity(0.5);
-  padding-block: 0.5rem;
-  text-align: right;
-  font-size: 12px;
+  padding-block-end: 1rem;
+  font-size: 14px;
 }
-footer:hover {
-  filter: opacity();
-}
-
-/* Links */
-a {
-  color: var(--accent-color);
-}
-
-a:hover {
-  color: var(--text-color);
-  text-decoration: underline;
-}
-
-/* Textareas */
-.textarea {
-  font-family: 'Fira Mono', monospace;
+textarea {
   background: var(--alt-color);
   color: var(--text-color);
   min-height: 100%;
   padding: 1rem;
+  width: 100%;
+  border-radius: 0.35rem;
+  font-size: 1.1rem;
 }
-.textarea::placeholder {
-  color: var(--text-color);
+.heart {
+  text-decoration: none;
 }
-
-/* Footer */
 .heart:hover {
   text-decoration: none;
   color: red;
 }
-
-/* Theme Toggle */
 button {
   background: inherit;
   border: none;
   cursor: pointer;
   font-size: 24px;
 }
-
-/* Site Title */
-.nav-title {
-  font-size: 24px;
-  /* font-weight: 600; */
-  /* line-height: 2; */
-  display: flex;
-  align-items: center;
-}
-
 @media screen and (max-width: 80ch) {
-  body {
-    min-width: 95vw;
+  main {
+    flex-grow: 1;
   }
 }
