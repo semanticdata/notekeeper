@@ -1,4 +1,5 @@
 * {
+  box-sizing: border-box;
   transition: all 750ms;
   text-align: center;
   overflow-y: hidden !important;
@@ -24,22 +25,6 @@ input {
 input,
 button {
   border-radius: 5px !important;
-}
-
-.site-author {
-  color: rebeccapurple;
-}
-
-.site-author:hover {
-  color: red;
-}
-
-.fa-heart {
-  color: rebeccapurple;
-}
-
-.fa-heart:hover {
-  color: red;
 }
 
 ::selection {
