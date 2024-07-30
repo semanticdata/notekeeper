@@ -11,17 +11,14 @@ If you are curious, go check out the [demo](https://semanticdata.github.io/notek
 
 ## ✨ Features
 
-- Autosaves your content after every keystroke.
-- Integrates Firefox Sync. Access your notes across browser instances.
-- Dark/Light themes and toggle.
-- ~~Uses [Bulma](https://bulma.io/) for styling.~~
-- ~~Uses [Fira Code](https://github.com/tonsky/FiraCode) as default font.~~
+- Auto-saves content after every keystroke.
+- Integrated with Firefox Sync. Access your notes across browser instances.
+- Integrated with [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API). Access your notes while working offline, and sync them across browser instances with [Firefox Sync](https://www.mozilla.org/en-US/firefox/features/sync/), or [Chrome Sync](https://support.google.com/chrome/answer/185277).
+- New Dark/Light themes. (includes toggle button)
 
-## 🖼 Screenshots
+## 🖼 Screenshot
 
-![screenshot light theme](screenshot.png) _Light mode_
-
-![screenshot dark theme](screenshot-dark.png) _Dark mode_
+![screenshot](screenshot.png)
 
 ## 💜 Acknowledgments
 
