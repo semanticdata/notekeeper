@@ -34,7 +34,7 @@
     "default_icon": {
       "64": "src/icons/icon64.png"
     },
-    "default_title": "Sidebar: Notekeeper",
+    "default_title": "Notekeeper's Sidebar",
     "default_panel": "src/sidebar/panel.html"
   },
   "commands": {
