@@ -1,33 +1,43 @@
 * {
   box-sizing: border-box;
-  transition: all 750ms;
   text-align: center;
-  overflow-y: hidden !important;
 }
 
-section {
-  padding-top: 1rem !important;
+body {
+  font-family: sans-serif;
+}
+::selection {
+  background: rebeccapurple;
+  color: #ffffff;
 }
 
 h1 {
-  line-height: 1.5 !important;
+  margin-block-end: 2rem;
 }
 
-p {
-  padding-top: 4rem;
+label {
+  margin: 0.5rem 0;
 }
 
+button {
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+}
 input {
   margin: 0.5rem 0;
-  max-width: 10rem !important;
 }
-
 input,
 button {
   border-radius: 5px !important;
 }
 
-::selection {
-  background: rebeccapurple;
-  color: #ffffff;
+footer {
+  margin-block-start: 3rem;
+}
+footer p a {
+  text-decoration: none;
+}
+footer p a:hover {
+  color: red;
 }
