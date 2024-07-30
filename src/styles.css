@@ -58,6 +58,7 @@ textarea {
 }
 .heart {
   text-decoration: none;
+  color: rgb(128, 0, 255);
 }
 .heart:hover {
   text-decoration: none;
