@@ -11,11 +11,11 @@ If you are curious, go check out the [demo](https://semanticdata.github.io/notek
 
 ## ✨ Features
 
+- Autosaves your content after every keystroke.
 - Integrates Firefox Sync. Access your notes across browser instances.
 - Dark/Light themes and toggle.
-- Autosaves your content after every keystroke.
-- Uses [Bulma](https://bulma.io/) for styling.
-- Uses [Fira Code](https://github.com/tonsky/FiraCode) as default font.
+- ~~Uses [Bulma](https://bulma.io/) for styling.~~
+- ~~Uses [Fira Code](https://github.com/tonsky/FiraCode) as default font.~~
 
 ## 🖼 Screenshots
 
@@ -23,21 +23,9 @@ If you are curious, go check out the [demo](https://semanticdata.github.io/notek
 
 ![screenshot dark theme](screenshot-dark.png) _Dark mode_
 
-## 🔄 Changes from Upstream
-
-| Change description |       |
-| ------------------ | :---: |
-| Add basic styles with [Bulma](https://bulma.io/). | ✔ |
-| Integrate w/ Firefox Sync, preserving notes content between machines. | ✔ |
-| Add [Fira Code](https://fonts.google.com/specimen/Fira+Code) as font-family for the editor. | ✔ |
-| Add light and dark themes and toggle.  | ✔ |
-| Add new [options](https://github.com/semanticdata/firefox-chatgpt-in-sidebar/blob/main/options/options.js) menu to allow for customization beyond theme color. | ⏳ |
-
 ## 💜 Acknowledgments
 
-This extension is based on [Tab Notes](https://github.com/nsht/tab_notes) which hasn't received updates in 4 years.
-
-Icons used for all my extensions are part of <a href="https://uxwing.com/">UXWing</a>'s collection. Take a look at their <a href="https://uxwing.com/license">license</a>.
+This extension is based on [Tab Notes](https://github.com/nsht/tab_notes). It hadn't received updates in over 4 years when forked.
 
 ## © License
 
