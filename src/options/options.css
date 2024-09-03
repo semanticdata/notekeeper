@@ -6,6 +6,7 @@
 body {
   font-family: sans-serif;
 }
+
 ::selection {
   background: rebeccapurple;
   color: #ffffff;
@@ -24,9 +25,11 @@ button {
   font-size: 1rem;
   padding: 0.25rem 0.5rem;
 }
+
 input {
   margin: 0.5rem 0;
 }
+
 input,
 button {
   border-radius: 5px !important;
@@ -35,9 +38,11 @@ button {
 footer {
   margin-block-start: 3rem;
 }
+
 footer p a {
   text-decoration: none;
 }
+
 footer p a:hover {
   color: red;
 }

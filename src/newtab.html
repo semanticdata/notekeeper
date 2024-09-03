@@ -1,47 +1,41 @@
 <!DOCTYPE html>
-
 <html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Notekeeper</title>
-    <meta name="description" content="Notekeeper is a Firefox extension that transforms the New Tab into a minimalist, auto-saving text editor.">
-    <link rel="icon" type="image/png" sizes="64x64" href="icons/icon64.png" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
 
-  <body>
-    <header>
-      <h1 class="nav-title">
-        <img src="icons/icon64.png" alt="icon" height="32px" width="32px" />
-        Notekeeper
-      </h1>
-      <button type="button" data-theme-toggle aria-label="Change color theme">
-        Change color theme
-      </button>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notekeeper</title>
+  <meta name="description"
+    content="Notekeeper is a Firefox extension that transforms the New Tab into a minimalist, auto-saving text editor.">
+  <link rel="icon" type="image/png" sizes="64x64" href="icons/icon64.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
 
-    <main>
-      <textarea
-        class="textarea"
-        id="notes"
-        rows="20"
-        placeholder="Write something..."></textarea>
-    </main>
+<body>
+  <header>
+    <h1 class="nav-title">
+      <img src="icons/icon64.png" alt="icon" height="32px" width="32px" />
+      Notekeeper
+    </h1>
+    <button type="button" data-theme-toggle aria-label="Change color theme">
+      Change color theme
+    </button>
+  </header>
 
-    <footer>
-      <p>
-        Made with
-        <a
-          class="heart"
-          href="https://github.com/semanticdata/notekeeper"
-          >❤</a
-        >
-        in Minneapolis.
-      </p>
-    </footer>
+  <main>
+    <textarea class="textarea" id="notes" rows="20" placeholder="Write something..."></textarea>
+  </main>
 
-    <script type="text/javascript" src="js/tabnotes.js"></script>
-    <script type="text/javascript" src="js/toggle.js"></script>
-  </body>
+  <footer>
+    <p>
+      Made with
+      <a class="heart" href="https://github.com/semanticdata/notekeeper">❤</a>
+      in Minneapolis.
+    </p>
+  </footer>
+
+  <script type="text/javascript" src="js/tabnotes.js"></script>
+  <script type="text/javascript" src="js/toggle.js"></script>
+</body>
+
 </html>
