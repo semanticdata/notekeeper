@@ -15,7 +15,7 @@ Notekeeper is a Firefox extension that transforms the new tab into a minimalist,
 - ✅ Dark/Light themes. (includes toggle button)
 
 | ![screenshot](./screenshot.png) |
-| :---: |
+| :-----------------------------: |
 
 ## 💜 Acknowledgments
 

@@ -1,4 +1,4 @@
-[data-theme='light'] {
+[data-theme="light"] {
   --bg-color: #fff;
   --textarea-bg-color: #fafafa;
   --text-color: #222;
@@ -6,7 +6,7 @@
   --accent-color: #9000ff;
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --bg-color: #202020;
   --textarea-bg-color: #202020;
   --text-color: #fff;
@@ -15,8 +15,8 @@
 }
 
 textarea,
-[data-theme='light'],
-[data-theme='dark'] {
+[data-theme="light"],
+[data-theme="dark"] {
   transition: all 0.4s ease-in-out;
 }
 
