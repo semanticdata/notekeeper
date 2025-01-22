@@ -9,13 +9,14 @@ NoteKeeper is a Firefox extension that transforms the new tab into a minimalist,
 
 ## ✨ Features
 
-- ✅ Auto-saves content after every keystroke.
-- ✅ Integrated with Firefox Sync. Access your notes across browser instances.
-- ✅ Integrated with [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API). Access your notes while working offline, and sync them across browser instances with [Firefox Sync](https://www.mozilla.org/en-US/firefox/features/sync/), or [Chrome Sync](https://support.google.com/chrome/answer/185277).
-- ✅ Dark/Light themes. (includes toggle button)
-
-| ![screenshot](./screenshot.png) |
-| :-----------------------------: |
+- ✅ Auto-saves content after every keystroke
+- ✅ Integrated with Firefox Sync - access your notes across browser instances
+- ✅ Integrated with [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
+- ✅ Works offline with browser sync support ([Firefox Sync](https://www.mozilla.org/en-US/firefox/features/sync/), [Chrome Sync](https://support.google.com/chrome/answer/185277))
+- ✅ Dark/Light themes with system preference detection
+- ✅ Responsive design that works across devices
+- ✅ Sidebar companion for quick access
+- ✅ Comprehensive test coverage
 
 ## 💜 Acknowledgments
 
