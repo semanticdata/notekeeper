@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "Notekeeper",
+  "name": "NoteKeeper",
   "version": "1.2.5",
-  "description": "Notekeeper transforms your new tab into a minimalist, auto-saving text editor.",
+  "description": "NoteKeeper transforms your new tab into a minimalist, auto-saving text editor.",
   "browser_specific_settings": {
     "gecko": {
       "id": "newtab-notes@semanticdata",
@@ -20,7 +20,7 @@
     "newtab": "src/newtab.html"
   },
   "browser_action": {
-    "default_title": "Notekeeper",
+    "default_title": "NoteKeeper",
     "default_icon": {
       "64": "src/icons/icon64.png"
     }
@@ -38,7 +38,7 @@
     "default_icon": {
       "64": "src/icons/icon64.png"
     },
-    "default_title": "Notekeeper's Sidebar",
+    "default_title": "NoteKeeper",
     "default_panel": "src/sidebar/panel.html"
   },
   "commands": {
@@ -46,7 +46,7 @@
       "suggested_key": {
         "default": "Alt+Shift+N"
       },
-      "description": "Toggle Notekeeper in the sidebar."
+      "description": "Toggle NoteKeeper in the sidebar."
     }
   }
 }

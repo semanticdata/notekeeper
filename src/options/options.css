@@ -1,10 +1,23 @@
+:root {
+  --input-bg: #f8f9fa;
+  --input-border: #dee2e6;
+  --button-primary: #7048e8;
+  --button-hover: #845ef7;
+  --selection-bg: #7048e8;
+  --selection-color: #ffffff;
+}
+
 * {
   box-sizing: border-box;
   text-align: center;
 }
 
 body {
-  font-family: sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 ::selection {
@@ -13,21 +26,58 @@ body {
 }
 
 h1 {
-  margin-block-end: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+form {
+  margin-bottom: 1.5rem;
 }
 
 label {
-  margin: 0.5rem 0;
+  display: block;
+  font-weight: 500;
 }
 
 button {
-  cursor: pointer;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background: var(--button-primary);
+  color: white;
   font-size: 1rem;
-  padding: 0.25rem 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 0.5rem;
+}
+
+button:hover {
+  background: var(--button-hover);
+}
+
+button#reset {
+  background: transparent;
+  border: 1px solid var(--button-primary);
+  color: var(--button-primary);
+}
+
+button#reset:hover {
+  background: var(--input-bg);
 }
 
 input {
-  margin: 0.5rem 0;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--input-border);
+  border-radius: 6px;
+  background: var(--input-bg);
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 input,
@@ -36,7 +86,10 @@ button {
 }
 
 footer {
-  margin-block-start: 3rem;
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 0.875rem;
+  opacity: 0.8;
 }
 
 footer p a {

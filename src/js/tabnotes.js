@@ -36,7 +36,7 @@ function saveToDB() {
     tab_note: document.querySelector("#notes").value,
   };
   if (browser_type === "Chrome") {
-    chrome.storage.sync.set(data, function () {});
+    chrome.storage.sync.set(data, function () { });
   } else {
     browser_obj.storage.sync.set(data);
   }
