@@ -23,12 +23,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Remove old demo
-        run: test -d demo && rm -rf demo/* || mkdir demo
-        # run: rm -rf demo/*
-
       - name: Copy src to demo
         run: |
+          test -d demo && rm -rf demo/* || mkdir demo
           cp -rf src/newtab.html demo/index.html
           cp -rf src/styles.css demo/styles.css
           test -d demo/icons && cp -r src/icons/* demo/icons || (mkdir demo/icons && cp -r src/icons/* demo/icons)
