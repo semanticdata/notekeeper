@@ -18,6 +18,11 @@ NoteKeeper is a Firefox extension that transforms the new tab into a minimalist,
 - ✅ Sidebar companion for quick access
 - ✅ Comprehensive test coverage
 
+## 🖼️ Screenshots
+
+| ![light-mode](./screenshot.png) | ![dark-mode](./screenshot.png) |
+| :---: | :---: |
+
 ## 💜 Acknowledgments
 
 This extension is based on [Tab Notes](https://github.com/nsht/tab_notes). It hadn't received updates in over 4 years when originally forked.
