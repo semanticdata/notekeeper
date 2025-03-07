@@ -99,3 +99,7 @@ footer p a {
 footer p a:hover {
   color: red;
 }
+
+#status {
+  margin-top: 1rem;
+}
