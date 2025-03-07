@@ -40,24 +40,8 @@ function handleSystemThemeChange(e) {
   }
 }
 
-/* On page load: */
-const button = document.querySelector("[data-theme-toggle]");
-const localStorageTheme = localStorage.getItem("theme");
-const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
-
-let currentThemeSetting = calculateSettingAsThemeString({
-  localStorageTheme,
-  systemSettingDark,
-});
-
-// Initialize the button and theme
-updateButton({ buttonEl: button, isDark: currentThemeSetting === "dark" });
-updateThemeOnHtmlEl({ theme: currentThemeSetting });
-
-// Add event listeners
-systemSettingDark.addListener(handleSystemThemeChange);
-
-button.addEventListener("click", (event) => {
+// Handle theme toggle button click
+function handleThemeToggleClick() {
   const newTheme = currentThemeSetting === "dark" ? "light" : "dark";
 
   localStorage.setItem("theme", newTheme);
@@ -65,4 +49,33 @@ button.addEventListener("click", (event) => {
   updateThemeOnHtmlEl({ theme: newTheme });
 
   currentThemeSetting = newTheme;
-});
+}
+
+// Initialize theme functionality
+function initTheme() {
+  // Get DOM elements and system preferences
+  const button = document.querySelector("[data-theme-toggle]");
+  const localStorageTheme = localStorage.getItem("theme");
+  const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+  // Determine initial theme
+  let currentThemeSetting = calculateSettingAsThemeString({
+    localStorageTheme,
+    systemSettingDark,
+  });
+
+  // Initialize the button and theme
+  updateButton({ buttonEl: button, isDark: currentThemeSetting === "dark" });
+  updateThemeOnHtmlEl({ theme: currentThemeSetting });
+
+  // Add event listeners
+  systemSettingDark.addListener(handleSystemThemeChange);
+  button.addEventListener("click", handleThemeToggleClick);
+
+  // Make these available to event handlers
+  window.button = button;
+  window.currentThemeSetting = currentThemeSetting;
+}
+
+// Execute initialization when DOM is ready
+document.addEventListener('DOMContentLoaded', initTheme);
