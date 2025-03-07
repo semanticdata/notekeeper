@@ -20,7 +20,7 @@ NoteKeeper is a Firefox extension that transforms the new tab into a minimalist,
 
 ## 🖼️ Screenshots
 
-| ![light-mode](./screenshot.png) | ![dark-mode](./screenshot.png) |
+| ![light-mode](./screenshot.png) | ![dark-mode](./screenshot-dark.png) |
 | :---: | :---: |
 
 ## 💜 Acknowledgments
