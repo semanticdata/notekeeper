@@ -1,3 +1,4 @@
+// Constant for sidebar toggle command name
 const sidebarToggle = "_execute_sidebar_action";
 
 // Update UI and set value of textbox
@@ -15,6 +16,8 @@ function openSidebar() {
   browser.sidebarAction.toggle();
 }
 
+// Listen for clicks on the browser action (toolbar icon)
 browser.browserAction.onClicked.addListener(openSidebar);
 
+// Initialize UI when DOM is ready
 document.addEventListener("DOMContentLoaded", updateUI);
