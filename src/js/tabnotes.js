@@ -5,10 +5,13 @@ document.addEventListener("keyup", logKey);
 
 // Determine browser type and set appropriate browser object
 const browser_type = getBrowser();
+let browser_obj;
 if (browser_type === "Chrome") {
-  var browser_obj = chrome;
+  browser_obj = chrome;
+} else if (browser_type === "Firefox") {
+  browser_obj = browser;
 } else {
-  var browser_obj = browser;
+  browser_obj = chrome; // Fallback to chrome for Edge and other browsers
 }
 
 // Listen for tab and window focus changes
