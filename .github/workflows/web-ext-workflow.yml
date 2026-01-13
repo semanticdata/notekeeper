@@ -1,11 +1,12 @@
 name: Release new version
 
-on:
-  push:
-    tags:
-      - 'v*.*.*'
-  # release:
-  #   types: [published]
+# on:
+#   workflow_dispatch:
+#   push:
+#     tags:
+#       - 'v*.*.*'
+#   release:
+#     types: [published]
 
 jobs:
   build-release:
