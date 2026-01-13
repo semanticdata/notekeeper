@@ -1,11 +1,11 @@
 name: Release new version
 
-on:
-  # push:
-  #   tags:
-  #     - 'v*.*.*'
-  # release:
-  #   types: [published]
+# on:
+#   push:
+#     tags:
+#       - 'v*.*.*'
+#   release:
+#     types: [published]
 
 jobs:
   build-release:
