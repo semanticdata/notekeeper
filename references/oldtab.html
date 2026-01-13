@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NoteKeeper</title>
+  <meta name="description"
+    content="NoteKeeper is a Firefox extension that transforms the New Tab into a minimalist, auto-saving text editor.">
+  <link rel="icon" type="image/png" sizes="48x48" href="icons/icon48.png" />
+  <!-- Prevent flash of incorrect theme -->
+  <script type="text/javascript" src="js/theme-init.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1 class="nav-title">
+      <img src="icons/icon32.png" alt="icon" height="32px" width="32px" />
+      NoteKeeper
+    </h1>
+    <button type="button" data-theme-toggle aria-label="Change to light theme">
+      Theme Toggle
+    </button>
+  </header>
+
+  <main>
+    <textarea class="textarea" id="notes" rows="20" placeholder="Write something..."></textarea>
+  </main>
+
+  <footer>
+    <p>
+      Made with
+      <a class="heart" href="https://github.com/semanticdata/notekeeper">❤</a>
+      in Minneapolis.
+    </p>
+  </footer>
+
+  <script type="text/javascript" src="js/tabnotes.js"></script>
+  <script type="text/javascript" src="js/toggle.js"></script>
+</body>
+
+</html>
