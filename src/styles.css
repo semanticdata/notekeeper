@@ -1,161 +1,189 @@
 :root {
-  /* Light theme */
-  --light-bg: #ffffff;
-  --light-textarea-bg: #f8f9fa;
-  --light-text: #212529;
-  --light-alt: #f1f3f5;
-  --light-accent: #7048e8;
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --border: #e0e0e0;
+  --subtle: #666;
+  --accent: #27ae60;
+  --shadow: rgba(0, 0, 0, 0.1);
 
-  /* Dark theme */
-  --dark-bg: #212529;
-  --dark-textarea-bg: #343a40;
-  --dark-text: #f8f9fa;
-  --dark-alt: #2b3035;
-  --dark-accent: #845ef7;
-
-  /* Common */
-  --border-radius: 8px;
-  --transition-speed: 0.3s;
-  --max-width: 90ch;
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-}
-
-[data-theme="light"] {
-  --bg-color: var(--light-bg);
-  --textarea-bg-color: var(--light-textarea-bg);
-  --text-color: var(--light-text);
-  --alt-color: var(--light-alt);
-  --accent-color: var(--light-accent);
+  --font-ui: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-body: "Georgia", serif;
+  --measure: 65ch;
+  --note-size: 1.125rem; /* Dynamic font size variable */
 }
 
 [data-theme="dark"] {
-  --bg-color: var(--dark-bg);
-  --textarea-bg-color: var(--dark-textarea-bg);
-  --text-color: var(--dark-text);
-  --alt-color: var(--dark-alt);
-  --accent-color: var(--dark-accent);
+  --bg: #111111;
+  --fg: #f0f0f0;
+  --border: #333333;
+  --subtle: #888;
+  --shadow: rgba(0, 0, 0, 0.5);
 }
 
-textarea,
-[data-theme="light"],
-[data-theme="dark"] {
-  transition: all var(--transition-speed) ease-in-out;
-}
-
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  background: var(--bg-color);
-  color: var(--text-color);
-  transition: background var(--transition-speed) ease-in-out;
 }
 
 body {
-  font-family: var(--font-sans);
-  line-height: 1.6;
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  padding: 1rem;
-  max-width: var(--max-width);
-  width: 100%;
+  height: 100dvh;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ui);
+  transition: background-color 0.2s;
+}
+
+/* Header & Footer Shared Styles */
+header,
+footer {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: var(--bg);
+  z-index: 10;
 }
 
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.nav-title {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 1.5rem;
+  border-block-end: 1px solid var(--border);
+  justify-content: space-between; /* Pushes brand left, toggle right */
   font-weight: 600;
-  color: var(--text-color);
-}
-
-main {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  letter-spacing: -0.02em;
 }
 
 footer {
-  margin-top: 2rem;
-  /* text-align: center; */
-  font-size: 0.875rem;
-  color: var(--text-color);
-  opacity: 0.8;
+  border-top: 1px solid var(--border);
+  justify-content: space-between;
+  color: var(--subtle);
+  gap: 1rem;
+  font-size: 0.75rem;
+}
+
+/* Layout Columns */
+.col-left,
+.col-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.col-right {
+  justify-content: flex-end;
+}
+.col-center {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Main Area */
+main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding: 2rem 1rem;
 }
 
 textarea {
-  background: var(--textarea-bg-color);
-  color: var(--text-color);
-  padding: 1.25rem;
   width: 100%;
-  flex: 1;
-  min-height: 0;
-  border: 1px solid var(--alt-color);
-  border-radius: var(--border-radius);
-  font-family: inherit;
-  font-size: 1rem;
-  line-height: 1.6;
-  resize: none;
-  transition: border-color var(--transition-speed) ease-in-out,
-    background var(--transition-speed) ease-in-out;
+  max-width: var(--measure);
+  min-height: 60vh;
+
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-body);
+  font-size: var(--note-size); /* Uses the variable now */
+  line-height: 1.5;
+
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  outline: none;
 }
 
 textarea:focus {
-  outline: none;
-  border-color: var(--accent-color);
+  border-color: var(--subtle);
 }
 
-button[data-theme-toggle] {
-  background: var(--alt-color);
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  width: 30px;
-  height: 30px;
-  font-size: 1rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  transition: all var(--transition-speed) ease-in-out;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+/* Utilities */
+.divider {
+  opacity: 0.3;
 }
-
-button[data-theme-toggle]:hover {
-  transform: scale(1.1);
-  background-color: var(--accent-color);
-  color: var(--bg-color);
-}
-
-button[data-theme-toggle]:active {
-  transform: scale(0.95);
-}
-
-[data-theme="dark"] button[data-theme-toggle] {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
-
 .heart {
   text-decoration: none;
-  color: var(--accent-color);
-  transition: color var(--transition-speed) ease-in-out;
+  color: inherit;
+}
+.heart:hover {
+  color: #e00;
+}
+.saved {
+  color: var(--accent);
+  transition: color 0.3s;
 }
 
-.heart:hover {
-  color: #ff6b6b;
+/* Buttons (Shared for Theme & Settings) */
+#theme-toggle,
+#settings-toggle {
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  color: inherit;
+  display: flex;
+  border-radius: 4px;
+}
+
+#theme-toggle:hover,
+#settings-toggle:hover,
+#settings-toggle[aria-expanded="true"] {
+  background: rgba(127, 127, 127, 0.1);
+  color: var(--fg);
+}
+
+/* Theme Icons */
+[data-theme="light"] .icon-sun {
+  display: none;
+}
+[data-theme="dark"] .icon-moon {
+  display: none;
+}
+
+/* Settings Menu Popover */
+.settings-menu {
+  position: absolute;
+  bottom: 100%; /* Positions it directly above the button */
+  right: 0;
+  margin-block-end: 1rem;
+  width: 200px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px var(--shadow);
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.settings-menu[hidden] {
+  display: none;
+}
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+#font-slider {
+  width: 100%;
+  cursor: pointer;
+  accent-color: var(--fg);
 }
