@@ -23,13 +23,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Copy src to demo
+      - name: Copy shared assets
+        run: node scripts/copy-shared.js
+
+      - name: Copy newtab to demo
         run: |
-          test -d demo && rm -rf demo/* || mkdir demo
-          cp -rf src/newtab.html demo/index.html
-          cp -rf src/styles.css demo/styles.css
-          test -d demo/icons && cp -r src/icons/* demo/icons || (mkdir demo/icons && cp -r src/icons/* demo/icons)
-          test -d demo/js && cp -r src/js/* demo/js || (mkdir demo/js && cp -r src/js/* demo/js)
+          mkdir -p demo
+          cp packages/newtab/src/newtab.html demo/index.html
+          cp packages/newtab/styles.css demo/
+          cp packages/newtab/script.js demo/
+          cp packages/newtab/preload.js demo/
+          cp packages/newtab/icon.svg demo/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
