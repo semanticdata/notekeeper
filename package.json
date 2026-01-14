@@ -1,0 +1,36 @@
+{
+  "name": "notekeeper",
+  "version": "2.0.0",
+  "description": "NoteKeeper transforms your new tab into a minimalist, auto-saving text editor with a sidebar companion.",
+  "author": "semanticdata",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/copy-shared.js",
+    "watch": "node scripts/watch-shared.js",
+    "dev:newtab": "npm run build && web-ext run --source-dir packages/newtab",
+    "dev:sidebar": "npm run build && web-ext run --source-dir packages/sidebar",
+    "package:newtab": "npm run build && web-ext build --source-dir packages/newtab",
+    "package:sidebar": "npm run build && web-ext build --source-dir packages/sidebar",
+    "package:all": "npm run build && web-ext build --source-dir packages/newtab && web-ext build --source-dir packages/sidebar"
+  },
+  "devDependencies": {
+    "web-ext": "^9.2.0"
+  },
+  "keywords": [
+    "firefox",
+    "extension",
+    "notes",
+    "productivity",
+    "newtab",
+    "sidebar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/semanticdata/notekeeper"
+  },
+  "bugs": {
+    "url": "https://github.com/semanticdata/notekeeper/issues"
+  },
+  "homepage": "https://github.com/semanticdata/notekeeper#readme"
+}

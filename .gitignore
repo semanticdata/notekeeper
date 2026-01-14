@@ -1,0 +1,10 @@
+node_modules
+
+# Build output - avoids duplicates and forces fresh builds
+packages/sidebar/styles.css
+packages/sidebar/script.js
+packages/sidebar/icon.svg
+packages/newtab/styles.css
+packages/newtab/script.js
+packages/newtab/icon.svg
+web-ext-artifacts

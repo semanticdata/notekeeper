@@ -2,11 +2,11 @@ name: Release new version
 
 on:
   workflow_dispatch:
-#   push:
-#     tags:
-#       - 'v*.*.*'
-#   release:
-#     types: [published]
+  # push:
+  #   tags:
+  #     - 'v*.*.*'
+  # release:
+  #   types: [published]
 
 jobs:
   build-release:
@@ -22,7 +22,7 @@ jobs:
         uses: kewisch/action-web-ext@v1
         with:
           cmd: build
-          filename: '{name}-{version}.xpi'
+          filename: "{name}-{version}.xpi"
           ignoreFiles: '[ "package.json", "package-lock.json", "yarn.lock", ".github", ".gitattributes", "LICENSE", "README.md"]'
 
       - name: Sign

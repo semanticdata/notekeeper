@@ -1,0 +1,61 @@
+{
+  "manifest_version": 2,
+  "name": "NoteKeeper Sidebar",
+  "version": "2.0.0",
+  "description": "NoteKeeper sidebar - a minimalist, auto-saving text editor that syncs with NoteKeeper.",
+  "author": "semanticdata",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "sidebar-notes@semanticdata",
+      "strict_min_version": "100.0"
+    }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "icons": {
+    "32": "icon.svg",
+    "48": "icon.svg",
+    "64": "icon.svg",
+    "96": "icon.svg",
+    "128": "icon.svg"
+  },
+  "browser_action": {
+    "default_title": "NoteKeeper Sidebar",
+    "default_icon": {
+      "32": "icon.svg",
+      "48": "icon.svg",
+      "64": "icon.svg",
+      "96": "icon.svg",
+      "128": "icon.svg"
+    }
+  },
+  "sidebar_action": {
+    "default_icon": {
+      "32": "icon.svg",
+      "48": "icon.svg",
+      "64": "icon.svg",
+      "96": "icon.svg",
+      "128": "icon.svg"
+    },
+    "default_title": "NoteKeeper Sidebar",
+    "default_panel": "src/panel.html"
+  },
+  "background": {
+    "scripts": [
+      "src/background.js"
+    ]
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "browser_style": true
+  },
+  "commands": {
+    "_execute_sidebar_action": {
+      "suggested_key": {
+        "default": "Alt+Shift+N"
+      },
+      "description": "Toggle NoteKeeper Sidebar."
+    }
+  }
+}
