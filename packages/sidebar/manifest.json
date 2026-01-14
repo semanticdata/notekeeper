@@ -42,11 +42,11 @@
       "128": "icon.svg"
     },
     "default_title": "NoteKeeper Sidebar",
-    "default_panel": "src/panel.html"
+    "default_panel": "panel.html"
   },
   "background": {
     "scripts": [
-      "src/background.js"
+      "background.js"
     ]
   },
   "options_ui": {
