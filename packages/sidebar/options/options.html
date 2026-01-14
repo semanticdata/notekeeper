@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notekeeper's Options</title>
+    <meta name="description" content="NoteKeeper is a Firefox extension that transforms the New Tab into a minimalist, auto-saving text editor.">
+    <link rel="icon" type="image/svg+xml" href="../icon.svg" />
+    <link rel="stylesheet" href="options.css" />
+</head>
+
+<body>
+    <header>
+      <h1 class="with-icon">
+        <img class="icon" src="../icon.svg" alt="icon" />
+        NoteKeeper
+      </h1>
+    </header>
+
+    <main class="stack">
+        <form>
+            <label for="shortcut">Keyboard Shortcut</label>
+            <br />
+            <input class="input is-small is-dark" type="text" id="shortcut" />
+        </form>
+        <div class="center">
+            <button id="update">Update</button>
+            <button id="reset">Reset</button>
+        </div>
+        <div id="status"></div>
+    </main>
+
+    <footer>
+        <p>
+            Made with
+            <a class="heart" href="https://github.com/semanticdata/notekeeper">❤</a>
+            in Minneapolis.
+        </p>
+    </footer>
+
+    <script src="options.js"></script>
+</body>
+
+</html>

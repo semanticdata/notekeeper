@@ -1,0 +1,98 @@
+:root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --border: #e0e0e0;
+    --subtle: #666;
+    --accent: #27ae60;
+    --shadow: rgba(0, 0, 0, 0.1);
+
+    --font-ui: ui-monospace, SFMono-Regular, Menlo, monospace;
+    --font-body: "Georgia", serif;
+    --measure: 65ch;
+    --note-size: 1.125rem;
+}
+
+[data-theme="dark"] {
+    --bg: #111111;
+    --fg: #f0f0f0;
+    --border: #333333;
+    --subtle: #888;
+    --shadow: rgba(0, 0, 0, 0.5);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    line-height: 1.5;
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-ui);
+    transition: background-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    max-inline-size: 65ch;
+    margin-inline: auto;
+    align-items: center;
+    justify-content: center;
+    height: 100dvh;
+}
+header {
+    margin-block-end: 3rem;
+    /* font-size: 1.75rem; */
+}
+header span {
+    font-weight: 600;
+}
+footer {
+    margin-block-start: 2.5rem;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.stack > * {
+    margin-block: 0;
+}
+.stack > * + * {
+    margin-block-start: 1.5rem;
+}
+.center {
+    box-sizing: content-box;
+    margin-inline: auto;
+    max-inline-size: var(--measure);
+}
+.icon {
+  width: 1em;
+  width: 1.5cap;
+  height: 1em;
+  height: 1.5cap;
+  /* width: 2em; */
+  /* height: 2em; */
+}
+.with-icon {
+  display: inline-flex;
+  align-items: baseline;
+  align-items: center;
+}
+.with-icon .icon {
+  margin-inline-end: 0.5rem;
+}
+
+::selection {
+    background: rebeccapurple;
+    color: #ffffff;
+}
+.heart {
+    text-decoration: none;
+    color: inherit;
+}
+.heart:hover {
+    color: #e00;
+}
