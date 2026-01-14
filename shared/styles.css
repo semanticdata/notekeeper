@@ -1,0 +1,189 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --border: #e0e0e0;
+  --subtle: #666;
+  --accent: #27ae60;
+  --shadow: rgba(0, 0, 0, 0.1);
+
+  --font-ui: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-body: "Georgia", serif;
+  --measure: 65ch;
+  --note-size: 1.125rem; /* Dynamic font size variable */
+}
+
+[data-theme="dark"] {
+  --bg: #111111;
+  --fg: #f0f0f0;
+  --border: #333333;
+  --subtle: #888;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-ui);
+  transition: background-color 0.2s;
+}
+
+/* Header & Footer Shared Styles */
+header,
+footer {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: var(--bg);
+  z-index: 10;
+}
+
+header {
+  border-block-end: 1px solid var(--border);
+  justify-content: space-between; /* Pushes brand left, toggle right */
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  justify-content: space-between;
+  color: var(--subtle);
+  gap: 1rem;
+  font-size: 0.75rem;
+}
+
+/* Layout Columns */
+.col-left,
+.col-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.col-right {
+  justify-content: flex-end;
+}
+.col-center {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Main Area */
+main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  overflow-y: auto;
+  padding: 2rem 1rem;
+}
+
+textarea {
+  width: 100%;
+  max-width: var(--measure);
+  min-height: 60vh;
+
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-body);
+  font-size: var(--note-size); /* Uses the variable now */
+  line-height: 1.5;
+
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: var(--subtle);
+}
+
+/* Utilities */
+.divider {
+  opacity: 0.3;
+}
+.heart {
+  text-decoration: none;
+  color: inherit;
+}
+.heart:hover {
+  color: #e00;
+}
+.saved {
+  color: var(--accent);
+  transition: color 0.3s;
+}
+
+/* Buttons (Shared for Theme & Settings) */
+#theme-toggle,
+#settings-toggle {
+  background: none;
+  border: none;
+  padding: 6px;
+  cursor: pointer;
+  color: inherit;
+  display: flex;
+  border-radius: 4px;
+}
+
+#theme-toggle:hover,
+#settings-toggle:hover,
+#settings-toggle[aria-expanded="true"] {
+  background: rgba(127, 127, 127, 0.1);
+  color: var(--fg);
+}
+
+/* Theme Icons */
+[data-theme="light"] .icon-sun {
+  display: none;
+}
+[data-theme="dark"] .icon-moon {
+  display: none;
+}
+
+/* Settings Menu Popover */
+.settings-menu {
+  position: absolute;
+  bottom: 100%; /* Positions it directly above the button */
+  right: 0;
+  margin-block-end: 1rem;
+  width: 200px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px var(--shadow);
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.settings-menu[hidden] {
+  display: none;
+}
+
+.setting-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+#font-slider {
+  width: 100%;
+  cursor: pointer;
+  accent-color: var(--fg);
+}
