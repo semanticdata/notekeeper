@@ -15,6 +15,9 @@ jobs:
       - name: "Checkout"
         uses: actions/checkout@v6
 
+      - name: "Copy shared assets"
+        run: node scripts/copy-shared.js
+
       - name: "web-ext lint newtab"
         uses: kewisch/action-web-ext@v1
         with:
