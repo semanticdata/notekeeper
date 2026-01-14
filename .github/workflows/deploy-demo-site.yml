@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Copy shared assets
         run: node scripts/copy-shared.js
@@ -29,7 +29,7 @@ jobs:
       - name: Copy newtab to demo
         run: |
           mkdir -p demo
-          cp packages/newtab/src/newtab.html demo/index.html
+          cp packages/newtab/newtab.html demo/index.html
           cp packages/newtab/styles.css demo/
           cp packages/newtab/script.js demo/
           cp packages/newtab/preload.js demo/
@@ -39,7 +39,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: "demo"
 
