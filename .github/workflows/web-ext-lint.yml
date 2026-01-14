@@ -1,0 +1,30 @@
+name: Lint Extensions
+
+on:
+  workflow_dispatch:
+  pull_request:
+  # push:
+  #   branches:
+  #     - main
+
+jobs:
+  lint:
+    name: "Lint"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v6
+
+      - name: "web-ext lint newtab"
+        uses: kewisch/action-web-ext@v1
+        with:
+          cmd: lint
+          source: packages/newtab
+          channel: listed
+
+      - name: "web-ext lint sidebar"
+        uses: kewisch/action-web-ext@v1
+        with:
+          cmd: lint
+          source: packages/sidebar
+          channel: listed
