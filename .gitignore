@@ -4,7 +4,9 @@ node_modules
 packages/sidebar/styles.css
 packages/sidebar/script.js
 packages/sidebar/icon.svg
+packages/sidebar/preload.js
 packages/newtab/styles.css
 packages/newtab/script.js
 packages/newtab/icon.svg
+packages/newtab/preload.js
 web-ext-artifacts
