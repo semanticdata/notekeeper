@@ -4,27 +4,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NoteKeeper</title>
+    <title>NoteKeeper Companion</title>
     <meta name="description"
-        content="NoteKeeper is a Firefox extension that transforms the New Tab into a minimalist, auto-saving text editor.">
+        content="NoteKeeper Companion is a Firefox extension that transforms the sidebar into a minimalist, auto-saving text editor.">
     <link rel="icon" type="image/svg+xml" href="../icon.svg" />
     <link rel="stylesheet" href="../styles.css" />
-    <script>
-        // Prevent FOUC
-        const savedTheme = localStorage.getItem("theme");
-        const sysTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        document.documentElement.setAttribute("data-theme", savedTheme || (sysTheme ? "dark" : "light"));
-        // Pre-load font size
-        const savedSize = localStorage.getItem("fontsize");
-        if (savedSize) document.documentElement.style.setProperty('--note-size', savedSize);
-    </script>
+    <script src="../preload.js"></script>
 </head>
 
 <body>
     <header>
         <div style="display: flex; align-items: center; gap: 0.25rem;">
             <img src="../icon.svg" alt="NoteKeeper Logo" width="24" height="24" />
-            <span class="brand">NoteKeeper</span>
+            <span class="brand">NoteKeeper Companion</span>
         </div>
 
         <button id="theme-toggle" aria-label="Toggle theme">

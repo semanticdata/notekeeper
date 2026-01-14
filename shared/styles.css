@@ -50,7 +50,7 @@ footer {
 
 header {
   border-block-end: 1px solid var(--border);
-  justify-content: space-between; /* Pushes brand left, toggle right */
+  justify-content: space-between;
   font-weight: 600;
   letter-spacing: -0.02em;
 }
@@ -95,7 +95,7 @@ textarea {
   background: transparent;
   color: inherit;
   font-family: var(--font-body);
-  font-size: var(--note-size); /* Uses the variable now */
+  font-size: var(--note-size);
   line-height: 1.5;
 
   border: 1px solid var(--border);
@@ -157,7 +157,7 @@ textarea:focus {
 /* Settings Menu Popover */
 .settings-menu {
   position: absolute;
-  bottom: 100%; /* Positions it directly above the button */
+  bottom: 100%;
   right: 0;
   margin-block-end: 1rem;
   width: 200px;

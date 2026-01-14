@@ -10,9 +10,11 @@
     "watch": "node scripts/watch-shared.js",
     "dev:newtab": "npm run build && web-ext run --source-dir packages/newtab",
     "dev:sidebar": "npm run build && web-ext run --source-dir packages/sidebar",
+    "lint:newtab": "npm run build && web-ext lint --source-dir packages/newtab",
+    "lint:sidebar": "npm run build && web-ext lint --source-dir packages/sidebar",
     "package:newtab": "npm run build && web-ext build --source-dir packages/newtab",
     "package:sidebar": "npm run build && web-ext build --source-dir packages/sidebar",
-    "package:all": "npm run build && web-ext build --source-dir packages/newtab && web-ext build --source-dir packages/sidebar"
+    "package:all": "npm run build && web-ext build --source-dir packages/newtab --overwrite-dest && web-ext build --source-dir packages/sidebar --overwrite-dest"
   },
   "devDependencies": {
     "web-ext": "^9.2.0"
