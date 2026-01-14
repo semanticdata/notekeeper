@@ -43,7 +43,7 @@
   },
   "background": {
     "scripts": [
-      "background.js"
+      "src/background.js"
     ]
   },
   "options_ui": {
