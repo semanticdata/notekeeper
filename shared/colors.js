@@ -22,7 +22,7 @@ const colorManager = {
     }
   },
 
-  // Catppuccin-inspired color presets
+  // Catppuccin
   catppuccin: {
     latte: {
       name: 'Catppuccin Latte',
@@ -44,7 +44,7 @@ const colorManager = {
     }
   },
 
-  // Nord theme - Arctic, north-bluish color palette
+  // Nord theme
   nord: {
     light: {
       name: 'Nord Light',
@@ -66,7 +66,7 @@ const colorManager = {
     }
   },
 
-  // Solarized - Precision colors for readability
+  // Solarized
   solarized: {
     light: {
       name: 'Solarized Light',
@@ -85,6 +85,28 @@ const colorManager = {
       border: '#073642',
       subtle: '#586e75',
       shadow: 'rgba(7, 54, 66, 0.5)'
+    }
+  },
+
+  // Dracula
+  dracula: {
+    dark: {
+      name: 'Dracula',
+      bg: '#282A36',
+      fg: '#F8F8F2',
+      accent: '#FF79C6',
+      border: '#44475A',
+      subtle: '#6272A4',
+      shadow: 'rgba(40, 42, 54, 0.5)'
+    },
+    light: {
+      name: 'Alucard',
+      bg: '#FFFBEB',
+      fg: '#1F1F1F',
+      accent: '#A3144D',
+      border: '#CFCFDE',
+      subtle: '#6C664B',
+      shadow: 'rgba(255, 251, 235, 0.5)'
     }
   },
 
@@ -120,6 +142,11 @@ const colorManager = {
       const currentVariant = localStorage.getItem('solarized-variant') || 'light';
       theme = this.solarized[currentVariant];
       isDarkMode = currentVariant === 'dark';
+    } else if (themeName === 'dracula') {
+      // Use Dracula behavior
+      const currentVariant = localStorage.getItem('dracula-variant') || 'dark';
+      theme = this.dracula[currentVariant];
+      isDarkMode = currentVariant === 'dark';
     } else {
       // Direct theme selection
       if (themeName.startsWith('catppuccin-')) {
@@ -130,11 +157,15 @@ const colorManager = {
         const nordVariant = themeName.replace('nord-', '');
         theme = this.nord[nordVariant];
         isDarkMode = nordVariant === 'dark';
-      } else if (themeName.startsWith('solarized-')) {
-        const solarizedVariant = themeName.replace('solarized-', '');
-        theme = this.solarized[solarizedVariant];
-        isDarkMode = solarizedVariant === 'dark';
-      } else {
+        } else if (themeName.startsWith('solarized-')) {
+          const solarizedVariant = themeName.replace('solarized-', '');
+          theme = this.solarized[solarizedVariant];
+          isDarkMode = solarizedVariant === 'dark';
+        } else if (themeName.startsWith('dracula-')) {
+          const draculaVariant = themeName.replace('dracula-', '');
+          theme = this.dracula[draculaVariant];
+          isDarkMode = draculaVariant === 'dark';
+        } else {
         theme = this.defaults[themeName];
         isDarkMode = themeName === 'dark';
       }
@@ -191,6 +222,12 @@ const colorManager = {
       const nextVariant = currentVariant === 'light' ? 'dark' : 'light';
       localStorage.setItem('solarized-variant', nextVariant);
       this.applyTheme('solarized');
+    } else if (currentTheme === 'dracula') {
+      // Toggle light/dark in dracula mode
+      const currentVariant = localStorage.getItem('dracula-variant') || 'dark';
+      const nextVariant = currentVariant === 'light' ? 'dark' : 'light';
+      localStorage.setItem('dracula-variant', nextVariant);
+      this.applyTheme('dracula');
     } else {
       // Direct theme selection - toggle between default themes
       const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -214,6 +251,9 @@ const colorManager = {
     } else if (currentTheme === 'solarized') {
       const currentVariant = localStorage.getItem('solarized-variant') || 'light';
       return currentVariant === 'light' ? 'dark' : 'light';
+    } else if (currentTheme === 'dracula') {
+      const currentVariant = localStorage.getItem('dracula-variant') || 'dark';
+      return currentVariant === 'light' ? 'dark' : 'light';
     }
     return currentTheme === 'light' ? 'dark' : 'light';
   },
@@ -224,7 +264,7 @@ const colorManager = {
   }
 };
 
-// Initialize theme selector dropdown value
+  // Initialize theme selector dropdown value
 const initThemeSelector = () => {
   const currentTheme = colorManager.getCurrentTheme();
   const themeSelector = document.getElementById('theme-selector');
@@ -241,6 +281,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if (!localStorage.getItem('solarized-variant')) {
     localStorage.setItem('solarized-variant', 'light');
+  }
+  if (!localStorage.getItem('dracula-variant')) {
+    localStorage.setItem('dracula-variant', 'dark');
   }
 
   colorManager.init();

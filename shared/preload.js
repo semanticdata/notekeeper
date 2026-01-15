@@ -17,9 +17,13 @@ if (savedTheme === 'default') {
   const nordVariant = localStorage.getItem("nord-variant") || "light";
   actualTheme = nordVariant === "dark" ? "dark" : "light";
 } else if (savedTheme === 'solarized') {
-  // For solarized theme, check the variant storage
+  // For solarized theme, check variant storage
   const solarizedVariant = localStorage.getItem("solarized-variant") || "light";
   actualTheme = solarizedVariant === "dark" ? "dark" : "light";
+} else if (savedTheme === 'dracula') {
+  // For dracula theme, check variant storage
+  const draculaVariant = localStorage.getItem("dracula-variant") || "dark";
+  actualTheme = draculaVariant === "dark" ? "dark" : "light";
 }
 
 document.documentElement.setAttribute("data-theme", actualTheme || (sysTheme ? "dark" : "light"));
