@@ -158,9 +158,8 @@ const colorManager = {
     // Update theme toggle aria-label
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
-      const nextTheme = this.getNextTheme(themeName);
-      const isNextDark = nextTheme === 'dark' || nextTheme === 'frappe';
-      themeToggle.setAttribute('aria-label', `Switch to ${isNextDark ? 'light' : 'dark'} theme`);
+      const isCurrentDark = isDarkMode;
+      themeToggle.setAttribute('aria-label', `Switch to ${isCurrentDark ? 'light' : 'dark'} theme`);
     }
   },
 
@@ -225,7 +224,25 @@ const colorManager = {
   }
 };
 
+// Initialize theme selector dropdown value
+const initThemeSelector = () => {
+  const currentTheme = colorManager.getCurrentTheme();
+  const themeSelector = document.getElementById('theme-selector');
+  if (themeSelector) {
+    themeSelector.value = currentTheme;
+  }
+};
+
 // Initialize on DOM load
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize default variants for new themes if not set
+  if (!localStorage.getItem('nord-variant')) {
+    localStorage.setItem('nord-variant', 'light');
+  }
+  if (!localStorage.getItem('solarized-variant')) {
+    localStorage.setItem('solarized-variant', 'light');
+  }
+
   colorManager.init();
+  initThemeSelector();
 });

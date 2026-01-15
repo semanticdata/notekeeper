@@ -250,12 +250,6 @@ if (storedFontFamily) {
   updateFontFamily(storedFontFamily);
 }
 
-// Init Theme Selector
-const currentTheme = colorManager.getCurrentTheme();
-if (els.themeSelector) {
-  els.themeSelector.value = currentTheme;
-}
-
 // Migrate legacy theme storage for backward compatibility
 const migrateLegacyTheme = () => {
   const legacyTheme = localStore.get("theme");
@@ -273,14 +267,6 @@ const migrateLegacyTheme = () => {
     }
     // Remove old theme key
     localStore.remove("theme");
-  }
-
-  // Initialize default variants for new themes if not set
-  if (!localStorage.getItem('nord-variant')) {
-    localStorage.setItem('nord-variant', 'light');
-  }
-  if (!localStorage.getItem('solarized-variant')) {
-    localStorage.setItem('solarized-variant', 'light');
   }
 };
 
