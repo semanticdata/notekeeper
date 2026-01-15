@@ -126,7 +126,8 @@ textarea:focus {
 
 /* Buttons (Shared for Theme & Settings) */
 #theme-toggle,
-#settings-toggle {
+#settings-toggle,
+#export-button {
   background: none;
   border: none;
   padding: 6px;
@@ -138,6 +139,7 @@ textarea:focus {
 
 #theme-toggle:hover,
 #settings-toggle:hover,
+#export-button:hover,
 #settings-toggle[aria-expanded="true"] {
   background: rgba(127, 127, 127, 0.1);
   color: var(--fg);
