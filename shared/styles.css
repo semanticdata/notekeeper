@@ -1,11 +1,21 @@
 :root {
-  --bg: #ffffff;
-  --fg: #1a1a1a;
-  --border: #e0e0e0;
-  --subtle: #666;
-  --accent: #27ae60;
-  --shadow: rgba(0, 0, 0, 0.1);
+  /* User Customizable Colors - Set by colorManager */
+  --user-bg: #eff1f5;
+  --user-fg: #4c4f69;
+  --user-accent: #1e66f5;
+  --user-border: #dce0e8;
+  --user-subtle: #8c8fa1;
+  --user-shadow: rgba(220, 224, 232, 0.5);
 
+  /* Derived Colors - Use user colors */
+  --bg: var(--user-bg);
+  --fg: var(--user-fg);
+  --accent: var(--user-accent);
+  --border: var(--user-border);
+  --subtle: var(--user-subtle);
+  --shadow: var(--user-shadow);
+
+  /* Font & Layout */
   --font-ui: ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-body: "Georgia", serif;
   --measure: 65ch;
@@ -14,11 +24,12 @@
 }
 
 [data-theme="dark"] {
-  --bg: #111111;
-  --fg: #f0f0f0;
-  --border: #333333;
-  --subtle: #888;
-  --shadow: rgba(0, 0, 0, 0.5);
+  --user-bg: #303446;
+  --user-fg: #c6d0f5;
+  --user-accent: #8caaee;
+  --user-border: #51576d;
+  --user-subtle: #838ba7;
+  --user-shadow: rgba(30, 32, 48, 0.5);
 }
 
 *,
@@ -221,7 +232,20 @@ textarea:focus {
   /* font-size: 0.85rem; */
 }
 
-#font-family:focus {
+#font-family:focus,
+#theme-selector:focus {
   outline: none;
   border-color: var(--subtle);
+}
+
+#theme-selector {
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  /* font-size: 0.85rem; */
 }
