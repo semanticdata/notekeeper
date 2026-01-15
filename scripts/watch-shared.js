@@ -8,7 +8,7 @@ const { build } = require('./copy-shared.js');
 
 // Configuration
 const sharedDir = path.join(__dirname, '../shared');
-const sharedFiles = ['script.js', 'styles.css', 'icon.svg'];
+const sharedFiles = ['script.js', 'styles.css', 'icon.svg', 'preload.js', 'export.js'];
 
 // Colors for console output
 const colors = {
