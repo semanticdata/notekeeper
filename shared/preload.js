@@ -12,6 +12,14 @@ if (savedTheme === 'default') {
   // For catppuccin theme, check the variant storage
   const catppuccinVariant = localStorage.getItem("catppuccin-variant") || "latte";
   actualTheme = catppuccinVariant === "frappe" ? "dark" : "light";
+} else if (savedTheme === 'nord') {
+  // For nord theme, check the variant storage
+  const nordVariant = localStorage.getItem("nord-variant") || "light";
+  actualTheme = nordVariant === "dark" ? "dark" : "light";
+} else if (savedTheme === 'solarized') {
+  // For solarized theme, check the variant storage
+  const solarizedVariant = localStorage.getItem("solarized-variant") || "light";
+  actualTheme = solarizedVariant === "dark" ? "dark" : "light";
 }
 
 document.documentElement.setAttribute("data-theme", actualTheme || (sysTheme ? "dark" : "light"));

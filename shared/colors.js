@@ -44,6 +44,50 @@ const colorManager = {
     }
   },
 
+  // Nord theme - Arctic, north-bluish color palette
+  nord: {
+    light: {
+      name: 'Nord Light',
+      bg: '#eceff4',
+      fg: '#4c566a',
+      accent: '#5e81ac',
+      border: '#d8dee9',
+      subtle: '#81a1c1',
+      shadow: 'rgba(216, 222, 233, 0.5)'
+    },
+    dark: {
+      name: 'Nord Dark',
+      bg: '#2e3440',
+      fg: '#d8dee9',
+      accent: '#88c0d0',
+      border: '#4c566a',
+      subtle: '#81a1c1',
+      shadow: 'rgba(46, 52, 64, 0.5)'
+    }
+  },
+
+  // Solarized - Precision colors for readability
+  solarized: {
+    light: {
+      name: 'Solarized Light',
+      bg: '#fdf6e3',
+      fg: '#657b83',
+      accent: '#268bd2',
+      border: '#93a1a1',
+      subtle: '#586e75',
+      shadow: 'rgba(147, 161, 161, 0.5)'
+    },
+    dark: {
+      name: 'Solarized Dark',
+      bg: '#002b36',
+      fg: '#839496',
+      accent: '#2aa198',
+      border: '#073642',
+      subtle: '#586e75',
+      shadow: 'rgba(7, 54, 66, 0.5)'
+    }
+  },
+
   // Initialize color system
   init() {
     const savedTheme = localStorage.getItem('notekeeper-theme') || 'default';
@@ -54,7 +98,7 @@ const colorManager = {
   applyTheme(themeName) {
     let theme;
     let isDarkMode = false;
-    
+
     // Handle theme selection
     if (themeName === 'default') {
       // Use original light/dark toggle behavior
@@ -66,18 +110,36 @@ const colorManager = {
       const currentVariant = localStorage.getItem('catppuccin-variant') || 'latte';
       theme = this.catppuccin[currentVariant];
       isDarkMode = currentVariant === 'frappe';
+    } else if (themeName === 'nord') {
+      // Use Nord behavior
+      const currentVariant = localStorage.getItem('nord-variant') || 'light';
+      theme = this.nord[currentVariant];
+      isDarkMode = currentVariant === 'dark';
+    } else if (themeName === 'solarized') {
+      // Use Solarized behavior
+      const currentVariant = localStorage.getItem('solarized-variant') || 'light';
+      theme = this.solarized[currentVariant];
+      isDarkMode = currentVariant === 'dark';
     } else {
       // Direct theme selection
       if (themeName.startsWith('catppuccin-')) {
         const catppuccinVariant = themeName.replace('catppuccin-', '');
         theme = this.catppuccin[catppuccinVariant];
         isDarkMode = catppuccinVariant === 'frappe';
+      } else if (themeName.startsWith('nord-')) {
+        const nordVariant = themeName.replace('nord-', '');
+        theme = this.nord[nordVariant];
+        isDarkMode = nordVariant === 'dark';
+      } else if (themeName.startsWith('solarized-')) {
+        const solarizedVariant = themeName.replace('solarized-', '');
+        theme = this.solarized[solarizedVariant];
+        isDarkMode = solarizedVariant === 'dark';
       } else {
         theme = this.defaults[themeName];
         isDarkMode = themeName === 'dark';
       }
     }
-    
+
     if (!theme) return;
 
     // Apply colors to CSS custom properties
@@ -89,10 +151,10 @@ const colorManager = {
 
     // Update theme attribute for existing CSS
     document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
-    
+
     // Save preference
     localStorage.setItem('notekeeper-theme', themeName);
-    
+
     // Update theme toggle aria-label
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
@@ -118,6 +180,18 @@ const colorManager = {
       const nextVariant = currentVariant === 'latte' ? 'frappe' : 'latte';
       localStorage.setItem('catppuccin-variant', nextVariant);
       this.applyTheme('catppuccin');
+    } else if (currentTheme === 'nord') {
+      // Toggle light/dark in nord mode
+      const currentVariant = localStorage.getItem('nord-variant') || 'light';
+      const nextVariant = currentVariant === 'light' ? 'dark' : 'light';
+      localStorage.setItem('nord-variant', nextVariant);
+      this.applyTheme('nord');
+    } else if (currentTheme === 'solarized') {
+      // Toggle light/dark in solarized mode
+      const currentVariant = localStorage.getItem('solarized-variant') || 'light';
+      const nextVariant = currentVariant === 'light' ? 'dark' : 'light';
+      localStorage.setItem('solarized-variant', nextVariant);
+      this.applyTheme('solarized');
     } else {
       // Direct theme selection - toggle between default themes
       const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
@@ -135,6 +209,12 @@ const colorManager = {
     } else if (currentTheme === 'catppuccin') {
       const currentVariant = localStorage.getItem('catppuccin-variant') || 'latte';
       return currentVariant === 'latte' ? 'frappe' : 'latte';
+    } else if (currentTheme === 'nord') {
+      const currentVariant = localStorage.getItem('nord-variant') || 'light';
+      return currentVariant === 'light' ? 'dark' : 'light';
+    } else if (currentTheme === 'solarized') {
+      const currentVariant = localStorage.getItem('solarized-variant') || 'light';
+      return currentVariant === 'light' ? 'dark' : 'light';
     }
     return currentTheme === 'light' ? 'dark' : 'light';
   },
