@@ -6,6 +6,7 @@ const els = {
   menu: document.getElementById("settings-menu"),
   slider: document.getElementById("font-slider"),
   fontDisplay: document.getElementById("font-display"),
+  fontFamily: document.getElementById("font-family"),
   words: document.getElementById("word-count"),
   status: document.getElementById("save-status"),
 };
@@ -110,11 +111,20 @@ const updateFontSize = (val) => {
   localStore.set("fontsize", size);
 };
 
+const updateFontFamily = (val) => {
+  els.html.style.setProperty("--font-body", val);
+  localStore.set("fontfamily", val);
+};
+
 // Menu Listeners
 els.toggleSettings.addEventListener("click", toggleMenu);
 
 els.slider.addEventListener("input", (e) => {
   updateFontSize(e.target.value);
+});
+
+els.fontFamily.addEventListener("change", (e) => {
+  updateFontFamily(e.target.value);
 });
 
 // Close menu when clicking outside
@@ -233,6 +243,13 @@ if (storedFontSize) {
   const val = parseInt(storedFontSize);
   els.slider.value = val;
   updateFontSize(val);
+}
+
+// Init Font Family
+const storedFontFamily = localStore.get("fontfamily");
+if (storedFontFamily) {
+  els.fontFamily.value = storedFontFamily;
+  updateFontFamily(storedFontFamily);
 }
 
 els.note.addEventListener("input", (e) => {
