@@ -1,7 +1,20 @@
 // Prevent FOUC by setting theme and font size before page renders
-const savedTheme = localStorage.getItem("theme");
+const savedTheme = localStorage.getItem("notekeeper-theme") || localStorage.getItem("theme");
 const sysTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-document.documentElement.setAttribute("data-theme", savedTheme || (sysTheme ? "dark" : "light"));
+
+// Determine actual theme to apply
+let actualTheme = savedTheme;
+if (savedTheme === 'default') {
+  // For default theme, check the legacy theme storage
+  const legacyTheme = localStorage.getItem("theme");
+  actualTheme = legacyTheme || (sysTheme ? "dark" : "light");
+} else if (savedTheme === 'catppuccin') {
+  // For catppuccin theme, check the variant storage
+  const catppuccinVariant = localStorage.getItem("catppuccin-variant") || "latte";
+  actualTheme = catppuccinVariant === "frappe" ? "dark" : "light";
+}
+
+document.documentElement.setAttribute("data-theme", actualTheme || (sysTheme ? "dark" : "light"));
 
 // Pre-load font size
 const savedSize = localStorage.getItem("fontsize");

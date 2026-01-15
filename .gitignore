@@ -6,9 +6,11 @@ packages/sidebar/script.js
 packages/sidebar/icon.svg
 packages/sidebar/preload.js
 packages/sidebar/export.js
+packages/sidebar/colors.js
 packages/newtab/styles.css
 packages/newtab/script.js
 packages/newtab/icon.svg
 packages/newtab/preload.js
 packages/newtab/export.js
+packages/newtab/colors.js
 web-ext-artifacts
