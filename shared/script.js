@@ -7,6 +7,7 @@ const els = {
   slider: document.getElementById("font-slider"),
   fontDisplay: document.getElementById("font-display"),
   fontFamily: document.getElementById("font-family"),
+  themeSelector: document.getElementById("theme-selector"),
   words: document.getElementById("word-count"),
   status: document.getElementById("save-status"),
 };
@@ -82,16 +83,9 @@ const localStore = {
   },
 };
 
-// Theme Logic
+// Theme Logic - Now uses colorManager
 const toggleTheme = () => {
-  const next =
-    els.html.getAttribute("data-theme") === "dark" ? "light" : "dark";
-  els.html.setAttribute("data-theme", next);
-  localStore.set("theme", next);
-  els.toggleTheme.setAttribute(
-    "aria-label",
-    `Switch to ${next === "dark" ? "light" : "dark"}`
-  );
+  colorManager.toggleTheme();
 };
 
 els.toggleTheme.addEventListener("click", toggleTheme);
@@ -125,6 +119,10 @@ els.slider.addEventListener("input", (e) => {
 
 els.fontFamily.addEventListener("change", (e) => {
   updateFontFamily(e.target.value);
+});
+
+els.themeSelector.addEventListener("change", (e) => {
+  colorManager.applyTheme(e.target.value);
 });
 
 // Close menu when clicking outside
@@ -251,6 +249,28 @@ if (storedFontFamily) {
   els.fontFamily.value = storedFontFamily;
   updateFontFamily(storedFontFamily);
 }
+
+// Migrate legacy theme storage for backward compatibility
+const migrateLegacyTheme = () => {
+  const legacyTheme = localStore.get("theme");
+  if (legacyTheme && !localStorage.getItem('notekeeper-theme')) {
+    // Migrate old theme to new system
+    if (legacyTheme === 'light' || legacyTheme === 'dark') {
+      localStorage.setItem('notekeeper-theme', legacyTheme);
+      localStorage.setItem('theme', legacyTheme);
+    } else if (legacyTheme === 'latte') {
+      localStorage.setItem('notekeeper-theme', 'catppuccin');
+      localStorage.setItem('catppuccin-variant', 'latte');
+    } else if (legacyTheme === 'frappe') {
+      localStorage.setItem('notekeeper-theme', 'catppuccin');
+      localStorage.setItem('catppuccin-variant', 'frappe');
+    }
+    // Remove old theme key
+    localStore.remove("theme");
+  }
+};
+
+migrateLegacyTheme();
 
 els.note.addEventListener("input", (e) => {
   updateStats(e.target.value);

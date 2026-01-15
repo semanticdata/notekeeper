@@ -57,6 +57,17 @@
             <!-- Settings Menu Popover -->
             <div id="settings-menu" class="settings-menu" hidden>
                 <div class="setting-row">
+                    <label for="theme-selector">Theme</label>
+                </div>
+                <select id="theme-selector">
+                    <option value="default">Default</option>
+                    <option value="catppuccin">Catppuccin</option>
+                    <option value="nord">Nord</option>
+                    <option value="solarized">Solarized</option>
+                    <option value="dracula">Dracula</option>
+                </select>
+                
+                <div class="setting-row">
                     <label for="font-slider">Font Size</label>
                     <span id="font-display">18px</span>
                 </div>
@@ -99,6 +110,7 @@
         </div>
     </footer>
 
+    <script type="text/javascript" src="colors.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="export.js"></script>
 </body>
