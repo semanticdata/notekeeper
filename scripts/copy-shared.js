@@ -6,7 +6,7 @@ const path = require('path');
 // Configuration
 const sharedDir = path.join(__dirname, '../shared');
 const packagesDir = path.join(__dirname, '../packages');
-const sharedFiles = ['script.js', 'styles.css', 'icon.svg', 'preload.js'];
+const sharedFiles = ['script.js', 'styles.css', 'icon.svg', 'preload.js', 'export.js'];
 const targets = ['newtab', 'sidebar'];
 
 // Colors for console output
