@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NoteKeeper Companion</title>
+    <title>NoteKeeper Sidebar</title>
     <meta name="description"
         content="NoteKeeper Companion is a Firefox extension that transforms the sidebar into a minimalist, auto-saving text editor.">
     <link rel="icon" type="image/svg+xml" href="icon.svg" />
@@ -12,11 +12,11 @@
     <script src="preload.js"></script>
 </head>
 
-<body>
+<body class="sidebar-panel">
     <header>
         <div style="display: flex; align-items: center; gap: 0.25rem;">
             <img src="icon.svg" alt="NoteKeeper Logo" width="24" height="24" />
-            <span class="brand">NoteKeeper Companion</span>
+            <span class="brand">NoteKeeper Sidebar</span>
         </div>
 
         <button id="theme-toggle" aria-label="Toggle theme">
@@ -44,8 +44,8 @@
     </main>
 
     <footer>
-        <div class="col-left"><span>Made with <a class="heart" href="https://github.com/semanticdata/notekeeper"
-                    target="_blank" rel="noopener">❤</a> in Minneapolis.</span></div>
+        <!-- <div class="col-left"><span>Made with <a class="heart" href="https://github.com/semanticdata/notekeeper"
+                    target="_blank" rel="noopener">❤</a> in Minneapolis.</span></div> -->
 
         <div class="col-center">
             <span id="word-count">0 words</span>
