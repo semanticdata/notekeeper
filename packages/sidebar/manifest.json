@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "NoteKeeper Sidebar",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "NoteKeeper sidebar - a minimalist, auto-saving text editor that syncs with NoteKeeper.",
   "author": "semanticdata",
   "browser_specific_settings": {
